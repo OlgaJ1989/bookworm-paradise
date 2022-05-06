@@ -1,9 +1,14 @@
 body {
-    background-color: black;
-    padding-top: 98px;
+    /*background-color: black;
+    padding-top: 98px;*/
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.navbar {
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 footer {
