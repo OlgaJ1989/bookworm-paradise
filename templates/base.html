@@ -117,6 +117,10 @@
 
     </header>
 
+    {% if messages %}
+        <div class="message-window"></div>
+    {% endif %}
+
     {% block content %}
 
     {% endblock %}
