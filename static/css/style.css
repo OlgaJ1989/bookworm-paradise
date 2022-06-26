@@ -1,6 +1,7 @@
 body {
-    /*background-color: black;
-    padding-top: 98px;*/
+    /*background-color: black;*/
+    background: url('/media/background1.jpg') no-repeat center center fixed;
+    /*padding-top: 98px;*/
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,6 +38,3 @@ footer {
     color: #ffffff;
 }
 
-p {
-    color: red;
-}
