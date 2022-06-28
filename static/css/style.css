@@ -1,6 +1,7 @@
 body {
     
     background: url('/media/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,6 +17,12 @@ h1 {
     font-size: 50px;
 }
 
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #DA8791;
+}
+
 p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 25px;
@@ -25,12 +32,11 @@ p {
 
 .navbar li {
     font-family: 'Josefin Sans', sans-serif;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-transform: uppercase;
 }
 
 #top-nav p {
@@ -40,6 +46,14 @@ p {
 ::placeholder {
     color: white !important;
 }
+
+.nav-font {
+    color: white;
+}
+
+/*.navbar-nav > .active > a {
+    color: red !important;
+}*/
 
 /* Footer */
 
@@ -63,3 +77,61 @@ footer {
     display: inline;
 }
 
+/*Main page - index.html */
+
+.shop-now-container {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-now-btn {
+    background: #7C3F5A;
+    color: white;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.shop-now-btn:hover,
+.shop-now-btn:active,
+.shop-now-btn:focus {
+    background: #7C3F5A;
+    color: #DA8791;
+}
+
+.jumbotron {
+    background-color: #d67782;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    margin: 0;
+    padding: 2rem 2rem;
+}
+
+.jumbotron-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.jumbotron h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 2px;
+}
+
+hr {
+    background-color: white;
+    border: 0;
+    height: 1px;
+}
+
+.active {
+    color: red;
+}

@@ -25,10 +25,10 @@
 
     <header>
         <!-- Top Navbar -->
-        <div id="top-nav" class="row pt-lg-2" style="background-color: #7C3F5A">
+        <div id="top-nav" class="row pt-lg-2 mr-0" style="background-color: #7C3F5A">
             <div class="col-4 text-center">
                 <a class="text-black nav-link" href="#" id="user-options" aria-haspopup="true" aria-expanded="false">
-                    <div class="text-center" style="color: #DA8791;">
+                    <div class="text-center nav-font">
                         <div><i class="fas fa-map-marker-alt fa-lg"></i></div>
                         <p class="my-0">Find Us</p>
                     </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-4 text-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h1 class="logo-font text-black my-0" style="color: #DA8791;">Bookworm Paradise</h1>
+                    <h1 class="logo-font text-black my-0 nav-font">Bookworm Paradise</h1>
                 </a>
             </div>
             <div class="col-4 text-center">
@@ -44,7 +44,7 @@
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                             aria-expanded="false">
-                            <div class="text-center" style="color: #DA8791;">
+                            <div class="text-center nav-font">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">Account</p>
                             </div>
@@ -64,7 +64,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center" style="color: #DA8791;">
+                            <div class="text-center nav-font">
                                 <div><i class="fas fa fa-shopping-cart fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Bottom Navbar -->
-        <nav class="navbar pb-2 navbar-light navbar-expand-sm" style="background-color: #DA8791;">
+        <nav class="navbar pb-2 navbar-dark navbar-expand-sm" style="background-color: #d67782;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
                 aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -90,7 +90,7 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav w-auto mx-auto">
                     <li class="active nav-item mr-2">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item mr-2">
                         <a class="nav-link" href="#">All Books</a>
@@ -141,17 +141,17 @@
                         <li>
                             <a href="https://en-gb.facebook.com/" target="_blank" rel="noopener"
                                 aria-label="Visit our Facebook page (opens in a new tab)"><i
-                                    class="fab fa-facebook" style="color: #DA8791;"></i></a>
+                                    class="fab fa-facebook nav-font"></i></a>
                         </li>
                         <li>
                             <a href="https://twitter.com/?lang=en-gb" target="_blank" rel="noopener"
                                 aria-label="Visit our Twitter page (opens in a new tab)"><i
-                                    class="fab fa-twitter" style="color: #DA8791;"></i></a>
+                                    class="fab fa-twitter nav-font"></i></a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/" target="_blank" rel="noopener"
                                 aria-label="Visit our Instagram page (opens in a new tab)"><i
-                                    class="fab fa-instagram" style="color: #DA8791;"></i></a>
+                                    class="fab fa-instagram nav-font"></i></a>
                         </li>
                     </ul>
                 </div>
