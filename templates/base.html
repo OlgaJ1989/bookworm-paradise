@@ -25,7 +25,7 @@
 
     <header>
         <!-- Top Navbar -->
-        <div id="top-nav" class="row pt-lg-2 mr-0" style="background-color: #7C3F5A">
+        <div id="top-nav" class="row pt-lg-2 mr-0 d-none d-lg-flex" style="background-color: #7C3F5A">
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 d-none d-sm-block">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h1 class="logo-font text-black my-0 nav-font">Bookworm Paradise</h1>
@@ -78,7 +78,8 @@
                 aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {% include 'includes/bottom-nav.html' %}
+            {% include 'includes/main-nav.html' %}
+            {% include 'includes/mobile-nav.html' %}
         </nav>
 
     </header>
