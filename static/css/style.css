@@ -30,6 +30,11 @@ p {
 
 /* Navbar */
 
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .navbar-toggler {
     border: white solid 2px !important;
 }
