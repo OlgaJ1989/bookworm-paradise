@@ -1,5 +1,5 @@
 body {
-    
+
     background: url('/media/background1.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -58,6 +58,21 @@ p {
 
 .nav-font {
     color: white;
+}
+
+.dropdown-menu {
+    background-color: #7C3F5A;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+
+.dropdown-divider {
+    color: white;
+}
+
+.dropdown-item {
+    color: white !important;
 }
 
 /*.navbar-nav > .active > a {
@@ -124,7 +139,7 @@ footer {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .jumbotron h2 {
