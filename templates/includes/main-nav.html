@@ -3,14 +3,38 @@
         <li class="active nav-item mr-2">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
         </li>
-        <li class="nav-item mr-2">
-            <a class="nav-link" href="#">All Books</a>
+        <li class="nav-item mr-2 dropdown">
+            <a class="nav-link" href="#" id="all-books" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">All Books</a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-books">
+                <a href="" class="dropdown-item">By Price</a>
+                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="" class="dropdown-item ">By Category</a>
+                <div class="dropdown-divider"></div>
+                <a href="" class="dropdown-item">All Books</a>
+            </div>
         </li>
-        <li class="nav-item mr-2">
-            <a class="nav-link" href="#">Categories</a>
+        <li class="nav-item mr-2 dropdown">
+            <a class="nav-link" href="#" id="categories" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Categories</a>
+            <div class="dropdown-menu border-0" aria-labelledby="categories">
+                <a href="" class="dropdown-item">Action</a>
+                <a href="" class="dropdown-item">Fantasy</a>
+                <a href="" class="dropdown-item">Horror</a>
+                <a href="" class="dropdown-item">Romance</a>
+                <a href="" class="dropdown-item">Science-fiction</a>
+                <a href="" class="dropdown-item">Thriller</a>
         </li>
-        <li class="nav-item mr-2">
-            <a class="nav-link" href="#">Offers</a>
+        <li class="nav-item mr-2 dropdown">
+            <a class="nav-link" href="#" id="offers" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Offers</a>
+            <div class="dropdown-menu border-0" aria-labelledby="offers">
+                <a href="" class="dropdown-item">By Price</a>
+                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="" class="dropdown-item ">By Category</a>
+                <div class="dropdown-divider"></div>
+                <a href="" class="dropdown-item">All Books</a>
+            </div>
         </li>
     </ul>
     <form method="GET" action="">
