@@ -20,7 +20,7 @@ class Book(models.Model):
     genre = models.ForeignKey(
         'Genre', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     binding = models.CharField(max_length=100)
     description = models.TextField()
@@ -31,7 +31,7 @@ class Book(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.name} by {self.author}"
+        return f"{self.title} by {self.author}"
 
 
 class Review(models.Model):
@@ -48,4 +48,4 @@ class Review(models.Model):
         ordering = ['-posted_on']
 
     def __str__(self):
-        return f"{self.author} reviewed {self.book.name}"
+        return f"{self.author} on {self.posted_on}"
