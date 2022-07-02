@@ -1,5 +1,4 @@
 body {
-
     background: url('/media/background1.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -158,4 +157,16 @@ hr {
 
 .active {
     color: red;
+}
+
+/* books.html (Products page) */
+
+.cover {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #e9bcc1;
+	z-index: -1;
+    padding-top: 50px;
 }
