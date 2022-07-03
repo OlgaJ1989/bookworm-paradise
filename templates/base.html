@@ -55,7 +55,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="{% url 'view_cart' %}">
                             <div class="text-center nav-font">
                                 <div><i class="fas fa fa-shopping-cart fa-lg"></i></div>
                                 <p class="my-0">
@@ -79,7 +80,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             {% include 'includes/mobile-nav.html' %}
-            {% include 'includes/main-nav.html' %}            
+            {% include 'includes/main-nav.html' %}
         </nav>
     </header>
 
@@ -121,6 +122,7 @@
     <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/783c3a5c57.js" crossorigin="anonymous"></script>
     <!-- Java Script-->
+    {% block corejs %}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -130,6 +132,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
 </body>
 
 </html>
