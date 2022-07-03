@@ -22,10 +22,18 @@ h2 {
 
 h3 {
     font-family: 'Bebas Neue', sans-serif;
-    font-weight: lighter;
     font-size: 27px;
     color: white;
     letter-spacing: 3px;
+}
+
+h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 27px;
+    color: #7C3F5A;
+    font-weight: bolder;
+
+
 }
 
 p {
@@ -200,4 +208,42 @@ hr {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     font-weight: bolder;
+}
+
+.img-thumbnail {
+    border-color: #7C3F5A;
+    background-color: #7C3F5A;
+}
+
+.book-details-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #7C3F5A
+}
+
+.book-details-container h3 {
+    color: #7C3F5A;
+    font-size: 50px;
+}
+
+.book-details-container i {
+    font-size: 100%;
+}
+
+.book-details-container hr {
+    background-color: white;
+    border: 0;
+    height: 1px;
+}
+
+.synopsis-container p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #7C3F5A;
+}
+
+.synopsis-container h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
 }

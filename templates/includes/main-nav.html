@@ -19,15 +19,14 @@
         <li class="nav-item mr-2 dropdown">
             <a class="nav-link" href="#" id="genres" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">Genres</a>
-            <div class="dropdown-menu" aria-labelledby="categories">
-                <a href="" class="dropdown-item">Classics</a>
-                <a href="" class="dropdown-item">Crime</a>
-                <a href="" class="dropdown-item">Fantasy</a>
-                <a href="" class="dropdown-item">Historical Fiction</a>
-                <a href="" class="dropdown-item">Horror</a>
-                <a href="" class="dropdown-item">Romance</a>
-                <a href="" class="dropdown-item">Science-Fiction</a>
-
+            <div class="dropdown-menu" aria-labelledby="genres">
+                <a href="{% url 'books' %}?genre=classics" class="dropdown-item">Classics</a>
+                <a href="{% url 'books' %}?genre=crime" class="dropdown-item">Crime</a>
+                <a href="{% url 'books' %}?genre=fantasy" class="dropdown-item">Fantasy</a>
+                <a href="{% url 'books' %}?genre=historical_fiction" class="dropdown-item">Historical Fiction</a>
+                <a href="{% url 'books' %}?genre=horror" class="dropdown-item">Horror</a>
+                <a href="{% url 'books' %}?genre=romance" class="dropdown-item">Romance</a>
+                <a href="{% url 'books' %}?genre=science_fiction" class="dropdown-item">Science-Fiction</a>
         </li>
         <li class="nav-item mr-2 dropdown">
             <a class="nav-link" href="#" id="offers" data-toggle="dropdown" aria-haspopup="true"
@@ -43,7 +42,7 @@
             </div>
         </li>
     </ul>
-    <form method="GET" action="">
+    <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
             <input class="form-control border border-black rounded-left"
                 style="background-color: #9d5173; color: #DA8791;" type="text" name="q" placeholder="Search books">
