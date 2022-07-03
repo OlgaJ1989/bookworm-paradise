@@ -24,8 +24,13 @@
             <div class="book-details-container mb-5 mt-md-5">
                 <h3 class="mb-0">{{ book.title }}</h3>
                 <h4>by {{ book.author }}</h4>
+                <small><a href="{% url 'books' %}?genre={{ book.genre.name }}"
+                        style="text-decoration: none; color: #7C3F5A;"><i class="fas fa-box mr-1"
+                            style="color: #7C3F5A; font-size: 100%;"></i>{{ book.genre.friendly_name }}
+                    </a>
+                </small>
                 {% if book.rating %}
-                <small style="color:#7C3F5A"><i class="fas fa-star mr-1" style="color: yellow"></i>{{ book.rating }} /
+                <small style="color:#7C3F5A"><i class="fas fa-star mr-1" style="color: #7C3F5A"></i>{{ book.rating }} /
                     5</small>
                 {% else %}
                 <small>No Rating</small>

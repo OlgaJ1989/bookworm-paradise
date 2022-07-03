@@ -247,3 +247,19 @@ hr {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 3px;
 }
+
+#book-number-container {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    color: #7C3F5A;
+}
+
+#book-number-container p {
+    font-size: 18px;    
+}
+
+.sort-box {
+    border: solid 3px white; 
+    background-color: #9d5173; 
+    color: white;
+}

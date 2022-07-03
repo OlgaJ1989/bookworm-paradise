@@ -7,11 +7,11 @@
             <a class="nav-link" href="#" id="all-books" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">All Books</a>
             <div class="dropdown-menu" aria-labelledby="all-books">
-                <a href="" class="dropdown-item">By Title</a>
-                <a href="" class="dropdown-item ">By Author</a>
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Genre</a>
-                <a href="" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'books' %}?sort=title&direction=asc" class="dropdown-item">By Title</a>
+                <a href="{% url 'books' %}?sort=author&direction=asc" class="dropdown-item ">By Author</a>
+                <a href="{% url 'books' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'books' %}?sort=genre&direction=desc" class="dropdown-item ">By Genre</a>
+                <a href="{% url 'books' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <div class="dropdown-divider"></div>
                 <a href="{% url 'books' %}" class="dropdown-item">All Books</a>
             </div>
@@ -44,7 +44,7 @@
     </ul>
     <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
-            <input class="form-control border border-black rounded-left"
+            <input class="form-control border rounded-left"
                 style="background-color: #9d5173; color: #DA8791;" type="text" name="q" placeholder="Search books">
             <div class="input-group-append">
                 <button class="form-control btn btn-black border border-black rounded-right" type="submit">
