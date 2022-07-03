@@ -22,6 +22,14 @@ h2 {
     color: #DA8791;
 }
 
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 27px;
+    color: white;
+    letter-spacing: 3px;
+}
+
 p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 25px;
@@ -169,4 +177,22 @@ hr {
 	background: #e9bcc1;
 	z-index: -1;
     padding-top: 50px;
+}
+
+.card {
+    border-width: 5px;
+    border-style: solid;
+    border-color: #7C3F5A;
+    background-color: #7C3F5A;
+    color: white;
+}
+
+.card-footer {
+    background-color: #7C3F5A;
+}
+
+.card p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
 }
