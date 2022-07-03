@@ -1,9 +1,7 @@
 body {
-    background: url('/media/background1.jpg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #e9bcc1;
 }
 
 i {
@@ -110,6 +108,13 @@ footer {
 
 /*Main page - index.html */
 
+.home-background {
+    background: url('/media/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 100vh;
+}
+
 .shop-now-container {
     height: 60vh;
     display: flex;
@@ -169,15 +174,15 @@ hr {
 
 /* books.html (Products page) */
 
-.cover {
+/*.overlay {
 	height: 100%;
 	width: 100%;
 	top: 0;
 	left: 0;
 	background: #e9bcc1;
-	z-index: -1;
+	z-index: -1 !important;
     padding-top: 50px;
-}
+}*/
 
 .card {
     border-width: 5px;

@@ -3,51 +3,51 @@
 
 
 {% block content %}
-<div class="cover">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="book-container col-10 offset-1">
-                <div class="row">
-                    {% for book in books %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
-                        <div class="card h-100">
-                            {% if book.image %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ book.image.url }}" alt="{{ book.title }}">
-                            </a>
-                            {% else %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-photo.jpeg"
-                                    alt="{{ book.title }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0">
-                                <h3 class="mb-0">{{ book.title }}</h>
-                                    <br>
-                                    <p>{{ book.author }}</p>
-                            </div>
-                            <hr>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 text-left font-weight-bold">£{{ book.price }} |
-                                            {{ book.binding }}</p>
-                                        {% if book.rating %}
-                                        <small><i class="fas fa-star mr-1" style="color: yellow"></i>{{ book.rating }} /
-                                            5</small>
-                                        {% else %}
-                                        <small>No Rating</small>
-                                        {% endif %}
-                                    </div>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="book-container col-10 offset-1">
+            <div class="row">
+                {% for book in books %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card h-100">
+                        {% if book.image %}
+                        <a href="{% url 'book_details' book.id %}">
+                            <img class="card-img-top img-fluid" src="{{ book.image.url }}" alt="{{ book.title }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'book_details' book.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-photo.jpeg"
+                                alt="{{ book.title }}">
+                        </a>
+                        {% endif %}
+                        <div class="card-body pb-0">
+                            <h3 class="mb-0">{{ book.title }}</h>
+                                <br>
+                                <p>{{ book.author }}</p>
+                        </div>
+                        <hr>
+                        <div class="card-footer pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead mb-0 text-left font-weight-bold">£{{ book.price }} |
+                                        {{ book.binding }}</p>
+                                    {% if book.rating %}
+                                    <small><i class="fas fa-star mr-1" style="color: yellow"></i>{{ book.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small>No Rating</small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
