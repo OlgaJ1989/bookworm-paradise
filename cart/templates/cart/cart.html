@@ -17,7 +17,7 @@
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">Info</th>
+                            <th scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
@@ -28,7 +28,7 @@
                     {% for item in cart_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.book.image.url }}">
+                            <img class="img-fluid rounded w-50" src="{{ item.book.image.url }}">
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.book.title }}</strong></p>
@@ -38,7 +38,25 @@
                             <p class="my-0">£{{ item.book.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <p class="my-0">{{ item.quantity }}</p>
+                            <form class="form update-form" method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                    name="quantity" value="1" min="1" max="99"
+                                                    data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="submit" class="btn btn-sm" value="Update">
+                                        <input type="submit" class="btn btn-sm" value="Remove">
+                                    </div>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </div>
+                            </form>
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.book.price }}</p>
