@@ -263,3 +263,17 @@ hr {
     background-color: #9d5173; 
     color: white;
 }
+
+.cart-container h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #7C3F5A;
+    
+}
+
+.cart-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #7C3F5A;
+}
