@@ -277,3 +277,18 @@ hr {
     font-weight: 600;
     color: #7C3F5A;
 }
+
+#delivery-banner {
+    background-color: #e9bcc1;    
+}
+
+#delivery-banner h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #7C3F5A;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+#delivery-banner i {
+    font-size: 100%;
+}
