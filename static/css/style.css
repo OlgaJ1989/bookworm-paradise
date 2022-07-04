@@ -32,13 +32,17 @@ h4 {
     font-size: 27px;
     color: #7C3F5A;
     font-weight: bolder;
-
-
 }
 
 p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 25px;
+}
+
+hr {
+    background-color: white;
+    border: 0;
+    height: 1px;
 }
 
 /* Navbar */
@@ -65,10 +69,6 @@ p {
     font-weight: bolder;
 }
 
-::placeholder {
-    color: white !important;
-}
-
 .nav-font {
     color: white;
 }
@@ -88,9 +88,28 @@ p {
     color: white !important;
 }
 
-/*.navbar-nav > .active > a {
-    color: red !important;
-}*/
+/* Search bar */
+
+::placeholder {
+    color: white !important;
+}
+
+/* Delivery banner */
+
+#delivery-banner {
+    background-color: #cda0a5;    
+}
+
+#delivery-banner h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #7C3F5A;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+#delivery-banner i {
+    font-size: 100%;
+}
 
 /* Footer */
 
@@ -146,6 +165,12 @@ footer {
     color: #DA8791;
 }
 
+#price {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    font-size: 40px; 
+}
+
 .jumbotron {
     background-color: #d67782;
     border-style: solid;
@@ -170,27 +195,7 @@ footer {
     letter-spacing: 2px;
 }
 
-hr {
-    background-color: white;
-    border: 0;
-    height: 1px;
-}
-
-.active {
-    color: red;
-}
-
 /* books.html (Products page) */
-
-/*.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	background: #e9bcc1;
-	z-index: -1 !important;
-    padding-top: 50px;
-}*/
 
 .card {
     border-width: 5px;
@@ -209,6 +214,24 @@ hr {
     font-size: 20px;
     font-weight: bolder;
 }
+
+#book-number-container {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    color: #7C3F5A;
+}
+
+#book-number-container p {
+    font-size: 18px;    
+}
+
+.sort-box {
+    border: solid 3px white; 
+    background-color: #9d5173; 
+    color: white;
+}
+
+/* book_details.html (Book detail page */
 
 .img-thumbnail {
     border-color: #7C3F5A;
@@ -248,22 +271,6 @@ hr {
     letter-spacing: 3px;
 }
 
-#book-number-container {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bolder;
-    color: #7C3F5A;
-}
-
-#book-number-container p {
-    font-size: 18px;    
-}
-
-.sort-box {
-    border: solid 3px white; 
-    background-color: #9d5173; 
-    color: white;
-}
-
 .cart-container h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
@@ -278,17 +285,9 @@ hr {
     color: #7C3F5A;
 }
 
-#delivery-banner {
-    background-color: #e9bcc1;    
-}
 
-#delivery-banner h4 {
-    font-family: 'Bebas Neue', sans-serif;
-    color: #7C3F5A;
-    letter-spacing: 2px;
-    font-size: 18px;
-}
-
-#delivery-banner i {
-    font-size: 100%;
+.qty_input {
+    background-color: #7C3F5A;
+    border: 2px solid white;
+    color: white;
 }
