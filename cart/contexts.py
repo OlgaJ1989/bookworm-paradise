@@ -1,3 +1,4 @@
+""" File storing the contexts """
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
@@ -5,6 +6,7 @@ from products.models import Book
 
 
 def cart_contents(request):
+    """ Function handling the contexts """
 
     cart_items = []
     total = 0

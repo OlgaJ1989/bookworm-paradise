@@ -38,21 +38,21 @@
                             <p class="my-0">£{{ item.book.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'modify_cart' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12">
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="1" min="1" max="99"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
                                                     data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <input type="submit" class="update-itrm btn btn-sm" value="Update">
-                                        <input type="submit" class="delete-item btn btn-sm" value="Remove">
+                                        <input type="submit" class="update-book btn btn-sm" value="Update">
+                                        <input type="submit" class="delete-book btn btn-sm" value="Delete">
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
@@ -92,4 +92,29 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    // Update book quantity in cart on click
+    $('.update-book').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Delete book from cart and reload page on click
+    $('.delete-book').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var bookId = $(this).attr('id').split('delete_')[1];
+        var url = `/cart/delete/${bookId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

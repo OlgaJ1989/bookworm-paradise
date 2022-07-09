@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+""" File storing the views for the cart app """
+from django.shortcuts import render, redirect, reverse
 
 
 def view_cart(request):
@@ -20,3 +21,18 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def modify_cart(request, item_id):
+    """ A view allowing to change the quantity \
+        of a specific book in the cart """
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        cart[item_id] = quantity
+    else:
+        cart.pop(item_id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
