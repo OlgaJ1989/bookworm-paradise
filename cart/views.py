@@ -39,12 +39,6 @@ def modify_cart(request, item_id):
 def delete_from_cart(request, item_id):
     """ A view allowing to delete an item from the cart """
     cart = request.session.get('cart', {})
-
-    del cart[item_id]
-    if not cart[item_id]:
-        cart.pop(item_id)
-    else:
-        cart.pop(item_id)
-
-        request.session['cart'] = cart
-        return HttpResponse(status=200)
+    cart.pop(item_id)
+    request.session['cart'] = cart
+    return HttpResponse(status=200)

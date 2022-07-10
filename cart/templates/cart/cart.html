@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 
 {% block content %}
@@ -45,21 +46,21 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ book.id }}" id="id_qty_{{ book.id }}">
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <input type="submit" class="update-book btn btn-sm" value="Update">
-                                        <input type="submit" class="delete-book btn btn-sm" value="Delete">
+                                        <input type="submit" class="delete-book btn btn-sm"
+                                            id="delete_{{ item.item_id }}" value="Delete">
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
                             </form>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.book.price }}</p>
+                            <p class="my-0">£{{ item.book.price | calculate_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
@@ -99,22 +100,24 @@
 
 <script type="text/javascript">
     // Update book quantity in cart on click
-    $('.update-book').click(function(e) {
+    $('.update-book').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Delete book from cart and reload page on click
-    $('.delete-book').click(function(e) {
+    $('.delete-book').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var bookId = $(this).attr('id').split('delete_')[1];
-        var url = `/cart/delete/${bookId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var url = `/cart/delete/${bookId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
