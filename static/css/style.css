@@ -162,7 +162,7 @@ footer {
 .shop-now-btn:active,
 .shop-now-btn:focus {
     background: #DA8791;
-    color: #7C3F5A;
+    color: white;
 }
 
 #price {
@@ -323,7 +323,7 @@ footer {
 }
 
 .delete-book {
-    background: red;
+    background: #7C3F5A;
     color: white;
     border-style: solid;
     border-width: 1px;
@@ -334,5 +334,29 @@ footer {
 .update-book:active,
 .update-book:focus {
     background: #DA8791;
-    color: #7C3F5A;
+    color: white;
+}
+
+.delete-book:hover,
+.delete-book:active,
+.delete-book:focus {
+    background: red;
+    color: white;
+}
+
+/* Messages / toasts */
+
+.message-window {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
 }
