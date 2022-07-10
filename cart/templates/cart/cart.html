@@ -32,11 +32,12 @@
                             <img class="img-fluid rounded w-50" src="{{ item.book.image.url }}">
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.book.title }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.book.sku|upper }}</p>
+                            <p class="my-0" id="book-title">{{ item.book.title }}</p>
+                            <p class="my-0" id="book-author">by {{ item.book.author }}</p>
+                            <p class="my-0 small text-muted" id="sku-number">SKU: {{ item.book.sku|upper }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.book.price }}</p>
+                            <p class="my-0" id="book-price">£{{ item.book.price }}</p>
                         </td>
                         <td class="py-3 w-25">
                             <form class="form update-form" method="POST" action="{% url 'modify_cart' item.item_id %}">
@@ -60,7 +61,8 @@
                             </form>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">£{{ item.book.price | calculate_subtotal:item.quantity }}</p>
+                            <p class="my-0" id="book-subtotal">£{{ item.book.price | calculate_subtotal:item.quantity }}
+                            </p>
                         </td>
                     </tr>
                     {% endfor %}

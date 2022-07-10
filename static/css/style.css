@@ -97,7 +97,7 @@ hr {
 /* Delivery banner */
 
 #delivery-banner {
-    background-color: #cda0a5;    
+    background-color: #cda0a5;
 }
 
 #delivery-banner h4 {
@@ -161,14 +161,14 @@ footer {
 .shop-now-btn:hover,
 .shop-now-btn:active,
 .shop-now-btn:focus {
-    background: #7C3F5A;
-    color: #DA8791;
+    background: #DA8791;
+    color: #7C3F5A;
 }
 
 #price {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 3px;
-    font-size: 40px; 
+    font-size: 40px;
 }
 
 .jumbotron {
@@ -222,12 +222,12 @@ footer {
 }
 
 #book-number-container p {
-    font-size: 18px;    
+    font-size: 18px;
 }
 
 .sort-box {
-    border: solid 3px white; 
-    background-color: #9d5173; 
+    border: solid 3px white;
+    background-color: #9d5173;
     color: white;
 }
 
@@ -271,11 +271,13 @@ footer {
     letter-spacing: 3px;
 }
 
+/* cart.html */
+
 .cart-container h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
     color: #7C3F5A;
-    
+
 }
 
 .cart-container p {
@@ -290,4 +292,47 @@ footer {
     background-color: #7C3F5A;
     border: 2px solid white;
     color: white;
+}
+
+#book-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #7C3F5A;
+}
+
+#book-author {
+    font-size: 18px;
+}
+
+#sku-number {
+    font-size: 14px;
+}
+
+#book-price,
+#book-subtotal {
+    font-size: 20px;
+}
+
+.update-book {
+    background: #7C3F5A;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.delete-book {
+    background: red;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.update-book:hover,
+.update-book:active,
+.update-book:focus {
+    background: #DA8791;
+    color: #7C3F5A;
 }
