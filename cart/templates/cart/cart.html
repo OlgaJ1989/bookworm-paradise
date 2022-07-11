@@ -47,18 +47,17 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99">
+                                                    name="quantity" value="{{ item.quantity }}" min="0" max="99">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <input type="submit" class="update-book btn btn-sm" value="Update">
-                                        <input type="submit" class="delete-book btn btn-sm"
-                                            id="delete_{{ item.item_id }}" value="Delete">
-                                    </div>
+                                    
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
-                            </form>
+                            </form>                           
+                            <input type="submit" class="update-book btn btn-sm" value="Update">
+                            <input type="submit" class="delete-book btn btn-sm"
+                                    id="delete_{{ item.item_id }}" value="Delete">                            
                         </td>
                         <td class="py-3">
                             <p class="my-0" id="book-subtotal">£{{ item.book.price | calculate_subtotal:item.quantity }}
@@ -112,14 +111,13 @@
         var csrfToken = "{{ csrf_token }}";
         var bookId = $(this).attr('id').split('delete_')[1];
         var url = `/cart/delete/${bookId}/`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken
-        };
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
             .done(function () {
                 location.reload();
             });
     })
+
 </script>
 {% endblock %}
