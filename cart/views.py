@@ -48,9 +48,13 @@ def modify_cart(request, item_id):
 
 def delete_from_cart(request, item_id):
     """ A view allowing to delete an item from the cart """
-    book = get_object_or_404(Book, pk=item_id)
-    cart = request.session.get('cart', {})
-    cart.pop(item_id)
-    messages.success(request, f'Deleted {book.title} from cart!')
-    request.session['cart'] = cart
-    return HttpResponse(status=200)
+    try:
+        book = get_object_or_404(Book, pk=item_id)
+        cart = request.session.get('cart', {})
+        cart.pop(item_id)
+        messages.success(request, f'Deleted {book.title} from cart!')
+        request.session['cart'] = cart
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)

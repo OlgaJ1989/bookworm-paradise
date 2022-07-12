@@ -355,8 +355,13 @@ footer {
 
 .custom-toast {
     overflow: visible;
+    background: #e9bcc1;
+    color: #7C3F5A;
 }
 
-.toast-capper {
-    height: 2px;
+.cart-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
