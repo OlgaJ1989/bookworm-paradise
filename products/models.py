@@ -38,7 +38,7 @@ class Book(models.Model):
 
 class Review(models.Model):
     """ Model storing reviews left by customers """
-    book = models.ForeignKey('Book', on_delete=models.CASCADE)
+    book = models.ForeignKey('Book', on_delete=models.CASCADE, related_name='reviews')
     author = models.ForeignKey(
         User, blank=False, null=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)

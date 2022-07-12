@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Book, Genre
+from .forms import ReviewForm
 
 
 def all_books(request):
@@ -52,5 +53,6 @@ def all_books(request):
 def book_details(request, book_id):
     """ A view generating each book's details """
     book = get_object_or_404(Book, pk=book_id)
-    context = {'book': book, }
+    reviews = book.reviews.order_by("-posted_on")
+    context = {'book': book, 'reviews': reviews}
     return render(request, 'products/book_details.html', context)
