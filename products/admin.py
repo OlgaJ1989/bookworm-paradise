@@ -31,6 +31,7 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'author',
+        'book',
         'posted_on'
     )
 

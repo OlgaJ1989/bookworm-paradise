@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #e9bcc1;
+    min-height: 100vh;
 }
 
 i {
@@ -269,6 +270,30 @@ footer {
 .synopsis-container h4 {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 3px;
+}
+
+.review-container p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #7C3F5A;
+}
+
+.review-container h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.review-container h5 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    color: #7C3F5A;
+    font-style: italic;
+}
+
+#posted-by {
+    font-size: 16px;
+    font-style: italic;
 }
 
 /* cart.html */
