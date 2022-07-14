@@ -296,6 +296,12 @@ footer {
     font-style: italic;
 }
 
+label {
+    font-size: 18px;
+    color: #7C3F5A;
+    font-style: italic;
+}
+
 /* cart.html */
 
 .cart-container h2 {
