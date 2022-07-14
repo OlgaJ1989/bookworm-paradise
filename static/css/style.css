@@ -339,15 +339,9 @@ footer {
     font-size: 20px;
 }
 
-.update-book {
-    background: #7C3F5A;
-    color: white;
-    border-style: solid;
-    border-width: 1px;
-    border-color: white;
-}
-
-.delete-book {
+.update-book,
+.delete-book,
+.submit-review {
     background: #7C3F5A;
     color: white;
     border-style: solid;
@@ -389,4 +383,3 @@ footer {
     overflow-x: hidden;
     overflow-y: auto;
 }
-

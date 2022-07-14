@@ -7,12 +7,10 @@ from products.models import Book
 
 def cart_contents(request):
     """ Function handling the contexts """
-
     cart_items = []
     total = 0
     book_count = 0
     cart = request.session.get('cart', {})
-
     for item_id, quantity in cart.items():
         book = get_object_or_404(Book, pk=item_id)
         total += quantity * book.price
@@ -22,7 +20,6 @@ def cart_contents(request):
             'quantity': quantity,
             'book': book,
         })
-
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
@@ -30,7 +27,6 @@ def cart_contents(request):
         delivery = 0
         free_delivery_delta = 0
     grand_total = delivery + total
-
     context = {
         'cart_items': cart_items,
         'total': total,
@@ -40,5 +36,4 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
     }
-
     return context

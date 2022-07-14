@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Book, Genre
+from .forms import ReviewForm
 
 
 def all_books(request):
@@ -53,5 +54,16 @@ def book_details(request, book_id):
     """ A view generating each book's details """
     book = get_object_or_404(Book, pk=book_id)
     reviews = book.reviews.order_by("-posted_on")
-    context = {'book': book, 'reviews': reviews}
+    if request.user:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST)
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.author = request.user
+                review.book = book
+                review.save()
+                return redirect(reverse('book_details', args=[book_id]))
+        else:
+            form = ReviewForm()
+    context = {'book': book, 'reviews': reviews, 'form': form}
     return render(request, 'products/book_details.html', context)

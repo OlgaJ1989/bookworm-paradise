@@ -95,6 +95,11 @@
         <div class="col-12 col-lg-4 review-container form-group">
             <h4><b>Leave a review</b></h4>
             <hr class="mt-1 mb-3">
+            <form method="POST" action="#" class="text-left">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Submit review" class="submit-review">
+            </form>
            
         </div>
     </div>
