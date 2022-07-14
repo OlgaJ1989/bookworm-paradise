@@ -95,6 +95,10 @@ hr {
     font-style: italic;
 }
 
+#search-bar {
+    background-color: #9d5173;
+}
+
 /* Delivery banner */
 
 #delivery-banner {
@@ -302,6 +306,23 @@ label {
     font-style: italic;
 }
 
+input[type="text"] {
+    background-color: #7C3F5A;
+}
+
+.textinput {
+    color: white;
+}
+
+.textarea {
+    background-color: #7C3F5A;
+    color: white;
+}
+
+::placeholder {
+    color: white !important;
+}
+
 /* cart.html */
 
 .cart-container h2 {
@@ -388,4 +409,8 @@ label {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.toast-header {
+    background-color: #7C3F5A;
 }

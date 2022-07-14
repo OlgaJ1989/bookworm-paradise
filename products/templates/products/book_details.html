@@ -95,11 +95,16 @@
         <div class="col-12 col-lg-4 review-container form-group">
             <h4><b>Leave a review</b></h4>
             <hr class="mt-1 mb-3">
+            {% if request.user.is_authenticated %}
             <form method="POST" action="#" class="text-left">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <input type="submit" value="Submit review" class="submit-review">
             </form>
+            {% else %}
+            <p>You must be logged in to leave a review!</p>
+            <a href="{% url 'account_login' %}" class="btn shop-now-btn">Log In</a>
+            {% endif %}
            
         </div>
     </div>
