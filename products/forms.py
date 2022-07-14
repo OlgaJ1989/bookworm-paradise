@@ -8,7 +8,8 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ('title', 'body',)
         widgets = {
-            'title': forms.TextInput(attrs={'placeholder': 'Name'}),
+            'title': forms.TextInput(
+                attrs={'placeholder': 'Give your review a title'}),
             'body': forms.Textarea(
-                attrs={'placeholder': 'Enter description here'}),
+                attrs={'placeholder': 'Leave your review here'}),
         }
