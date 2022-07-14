@@ -92,7 +92,7 @@ hr {
 /* Search bar */
 
 ::placeholder {
-    color: white !important;
+    font-style: italic;
 }
 
 /* Delivery banner */
