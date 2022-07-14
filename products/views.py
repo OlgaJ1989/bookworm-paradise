@@ -52,9 +52,14 @@ def all_books(request):
 
 
 def book_details(request, book_id):
-    """ A view generating each book's details """
+    """
+    A view generating each book's details and the ReviewForm()
+    allowing the user to add a book review
+    """
+
     book = get_object_or_404(Book, pk=book_id)
     reviews = book.reviews.order_by("-posted_on")
+
     if request.user:
         if request.method == 'POST':
             form = ReviewForm(request.POST)
@@ -67,5 +72,23 @@ def book_details(request, book_id):
                 return redirect(reverse('book_details', args=[book_id]))
         else:
             form = ReviewForm()
+
     context = {'book': book, 'reviews': reviews, 'form': form}
+    return render(request, 'products/book_details.html', context)
+
+
+def update_review(request, pk):
+    review = get_object_or_404(Review, id=pk)
+    form = ReviewForm()
+    if request.user == review.author:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST, instance=review)
+            if form.is_valid():
+                review.save()
+                messages.success(request, 'Your changes have been saved!')
+                return redirect(reverse('book_details', args=[pk]))
+    else:
+        messages.error(request, 'You are not authorised to edit this review!')
+        return redirect(reverse('book_details', args=[pk]))
+    context = {'form': form}
     return render(request, 'products/book_details.html', context)
