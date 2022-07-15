@@ -77,18 +77,28 @@ def book_details(request, book_id):
     return render(request, 'products/book_details.html', context)
 
 
-def update_review(request, pk):
-    review = get_object_or_404(Review, id=pk)
-    form = ReviewForm()
+def delete_review(request, pk):
+    review = Review.objects.get(id=pk)
     if request.user == review.author:
         if request.method == 'POST':
-            form = ReviewForm(request.POST, instance=review)
-            if form.is_valid():
-                review.save()
-                messages.success(request, 'Your changes have been saved!')
-                return redirect(reverse('book_details', args=[pk]))
-    else:
-        messages.error(request, 'You are not authorised to edit this review!')
-        return redirect(reverse('book_details', args=[pk]))
-    context = {'form': form}
-    return render(request, 'products/book_details.html', context)
+            review.delete()
+            return redirect(reverse('book_details', args=[pk]))
+    return render(
+                request, 'products/book_details.html', {'obj': review})
+
+
+# def update_review(request, pk):
+#    review = get_object_or_404(Review, id=pk)
+#    form = ReviewForm()
+#    if request.user == review.author:
+#        if request.method == 'POST':
+#            form = ReviewForm(request.POST, instance=review)
+#            if form.is_valid():
+#                review.save()
+#                messages.success(request, 'Your changes have been saved!')
+#                return redirect(reverse('book_details', args=[pk]))
+#    else:
+#        messages.error(request, 'You are not authorised to edit this review!')
+#        return redirect(reverse('book_details', args=[pk]))
+#    context = {'form': form}
+#    return render(request, 'products/book_details.html', context)
