@@ -77,18 +77,18 @@ def book_details(request, book_id):
     return render(request, 'products/book_details.html', context)
 
 
-def delete_review(request, pk):
-    review = Review.objects.get(id=pk)
+def delete_review(request, review_id):
+    review = Review.objects.get(pk=review_id)
 
     if request.user != review.author:
         messages.error(
                     request, "You are not authorised to delete this review!")
         return redirect('account_login')
 
-    if request.method == 'POST':
+    if request.method == 'GET':
         review.delete()
         messages.success(
                     request, "You have deleted your review!")
-        return redirect('account_login')
+        return redirect(reverse('book_details', args=[review_id]))
 
     return redirect('account_login')
