@@ -1,9 +1,9 @@
 """ File specyfying what views can be found in the app. """
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.decorators import login_required
 from .models import Book, Genre, Review
 from .forms import ReviewForm
 
@@ -79,26 +79,16 @@ def book_details(request, book_id):
 
 def delete_review(request, pk):
     review = Review.objects.get(id=pk)
-    if request.user == review.author:
-        if request.method == 'POST':
-            review.delete()
-            return redirect(reverse('book_details', args=[pk]))
-    return render(
-                request, 'products/book_details.html', {'obj': review})
 
+    if request.user != review.author:
+        messages.error(
+                    request, "You are not authorised to delete this review!")
+        return redirect('account_login')
 
-# def update_review(request, pk):
-#    review = get_object_or_404(Review, id=pk)
-#    form = ReviewForm()
-#    if request.user == review.author:
-#        if request.method == 'POST':
-#            form = ReviewForm(request.POST, instance=review)
-#            if form.is_valid():
-#                review.save()
-#                messages.success(request, 'Your changes have been saved!')
-#                return redirect(reverse('book_details', args=[pk]))
-#    else:
-#        messages.error(request, 'You are not authorised to edit this review!')
-#        return redirect(reverse('book_details', args=[pk]))
-#    context = {'form': form}
-#    return render(request, 'products/book_details.html', context)
+    if request.method == 'POST':
+        review.delete()
+        messages.success(
+                    request, "You have deleted your review!")
+        return redirect('account_login')
+
+    return redirect('account_login')
