@@ -1,0 +1,22 @@
+/* Delivery details conatiner */
+
+.fieldset-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight:800;
+    font-size: 16px;
+    color: #7C3F5A;
+}
+
+.emailinput {
+    background-color: #7C3F5A;
+}
+
+/* Order summary container */
+
+#book-title-checkout {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #7C3F5A;
+    font-weight: lighter;
+}
