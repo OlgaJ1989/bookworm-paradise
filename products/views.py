@@ -1,5 +1,5 @@
 """ File specyfying what views can be found in the app. """
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -78,17 +78,36 @@ def book_details(request, book_id):
 
 
 def delete_review(request, review_id):
+    """ View allowing users do delete existing reviews. """
     review = Review.objects.get(pk=review_id)
-
     if request.user != review.author:
         messages.error(
                     request, "You are not authorised to delete this review!")
         return redirect('account_login')
-
     if request.method == 'GET':
         review.delete()
         messages.success(
                     request, "You have deleted your review!")
         return redirect(reverse('book_details', args=[review_id]))
-
     return redirect('account_login')
+
+
+#def edit_review(request, review_id, book_id):
+#    """ View allowing users do modify existing reviews. """
+#    book = Book.objects.get(pk=book_id)
+#    review = Review.objects.get(pk=review_id)
+#    form = ReviewForm(instance=review)
+#    if request.user == review.author:
+#        if request.method == 'POST':
+#            form = ReviewForm(request.POST, instance=review)
+#            if form.is_valid():
+#                form.save()
+#                messages.success(request, "Your changes have been saved!")
+#                return redirect('book_details', args=[book_id])
+#        context = {'form': form}
+#        return redirect(reverse('book_details', args=[book_id]))
+#    else:
+#        messages.error(request, "You are not authorised to edit this review!")
+#        return redirect('account_login')
+#    context = {'form': form}
+#    return render(request, 'products/book_details.html', context)
