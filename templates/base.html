@@ -4,20 +4,30 @@
 <html lang="en">
 
 <head>
+    {% block meta %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A bookshop selling vintage and special editions of books.">
     <meta name="keywords" content="books, vintage, bookshop">
+    {% endblock %}
+
     <!-- Favicon -->
+
+    {% block corecss %}
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@200&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@200&display=swap">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
     <title>Bookworm Paradise</title>
 </head>
 
@@ -141,6 +151,7 @@
 
     <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/783c3a5c57.js" crossorigin="anonymous"></script>
+    
     <!-- Java Script-->
     {% block corejs %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
