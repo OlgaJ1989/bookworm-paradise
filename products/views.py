@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-#from django.contrib.auth.decorators import login_required
 from .models import Book, Genre, Review
 from .forms import ReviewForm
 
@@ -90,24 +89,3 @@ def delete_review(request, review_id):
                     request, "You have deleted your review!")
         return redirect(reverse('book_details', args=[review_id]))
     return redirect('account_login')
-
-
-#def edit_review(request, review_id, book_id):
-#    """ View allowing users do modify existing reviews. """
-#    book = Book.objects.get(pk=book_id)
-#    review = Review.objects.get(pk=review_id)
-#    form = ReviewForm(instance=review)
-#    if request.user == review.author:
-#        if request.method == 'POST':
-#            form = ReviewForm(request.POST, instance=review)
-#            if form.is_valid():
-#                form.save()
-#                messages.success(request, "Your changes have been saved!")
-#                return redirect('book_details', args=[book_id])
-#        context = {'form': form}
-#        return redirect(reverse('book_details', args=[book_id]))
-#    else:
-#        messages.error(request, "You are not authorised to edit this review!")
-#        return redirect('account_login')
-#    context = {'form': form}
-#    return render(request, 'products/book_details.html', context)
