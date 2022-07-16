@@ -51,13 +51,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
-                            </form>                           
+                            </form>
                             <input type="submit" class="update-book btn btn-sm" value="Update">
-                            <input type="submit" class="delete-book btn btn-sm"
-                                    id="delete_{{ item.item_id }}" value="Delete">                            
+                            <input type="submit" class="delete-book btn btn-sm" id="delete_{{ item.item_id }}"
+                                value="Delete">
                         </td>
                         <td class="py-3">
                             <p class="my-0" id="book-subtotal">£{{ item.book.price | calculate_subtotal:item.quantity }}
@@ -81,7 +81,7 @@
                     <tr>
                         <td colspan="5" class="text-right">
                             <a href="{% url 'books' %}" class="btn shop-now-btn">Keep Shopping</a>
-                            <a href="" class="btn shop-now-btn"><i class="fas fa-lock"
+                            <a href="{% url 'checkout' %}" class="btn shop-now-btn"><i class="fas fa-lock"
                                     style="display: inline; font-size: 100%; margin-right: 3px;"></i>Checkout</a>
                         </td>
                     </tr>
@@ -111,13 +111,14 @@
         var csrfToken = "{{ csrf_token }}";
         var bookId = $(this).attr('id').split('delete_')[1];
         var url = `/cart/delete/${bookId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
         $.post(url, data)
             .done(function () {
                 location.reload();
             });
     })
-
 </script>
 {% endblock %}
