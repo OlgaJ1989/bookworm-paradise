@@ -312,6 +312,7 @@ label {
 
 input[type="text"] {
     background-color: #7C3F5A;
+    border: white solid 2px;
 }
 
 .textinput {
@@ -321,6 +322,7 @@ input[type="text"] {
 .textarea {
     background-color: #7C3F5A;
     color: white;
+    border: white solid 2px;
 }
 
 ::placeholder {
@@ -333,7 +335,6 @@ input[type="text"] {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 50px;
     color: #7C3F5A;
-
 }
 
 .cart-container p {
@@ -342,7 +343,6 @@ input[type="text"] {
     font-weight: 600;
     color: #7C3F5A;
 }
-
 
 .qty_input {
     background-color: #7C3F5A;
@@ -376,6 +376,7 @@ input[type="text"] {
     background: #7C3F5A;
     color: white;
     border-style: solid;
+    border-radius: 3px;
     border-width: 1px;
     border-color: white;
 }
