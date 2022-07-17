@@ -55,3 +55,54 @@
     color: #7C3F5A;
     font-weight: lighter;
 }
+
+/* checkout_success.html */
+
+.checkout-success p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #7C3F5A;
+}
+
+.checkout-success h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #7C3F5A;
+}
+
+.order-confirmation-wrapper p {
+    font-size: 17px;
+}
+
+.order-info-label {
+    font-family: 'Bebas Neue', sans-serif; 
+    color: #7C3F5A;
+    font-size: 20px;
+}
+
+.border-style {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Loading overlay */
+
+#loading-overlay {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 198, 240, 0.85);
+    z-index: 9999;
+}
+
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
