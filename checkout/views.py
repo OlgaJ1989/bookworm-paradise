@@ -1,6 +1,6 @@
 """ File storing views for the checkout app """
-import stripe
 import json
+import stripe
 from django.shortcuts import render, redirect, reverse, \
     get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
@@ -35,6 +35,7 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
+
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -48,7 +49,11 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
+            order.save()
             for item_id, item_data in cart.items():
                 try:
                     book = Book.objects.get(id=item_id)
@@ -61,24 +66,25 @@ def checkout(request):
                         order_line_item.save()
                 except Book.DoesNotExist:
                     messages.error(request, (
-                        "One of the books in your cart wasn't found in \
-                            our database. Please call us for assistance!")
+                        "One of the books in your cart is not available. "
+                        "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
+
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There is an error in your form. \
+            messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-        request.session['save_info'] = 'save-info' in request.POST
-        return redirect(reverse('checkout_success', args=[order.order_number]))
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "Your cart is empty!")
+            messages.error(
+                request, "There's nothing in your cart at the moment.")
             return redirect(reverse('books'))
+
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
@@ -87,6 +93,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+
         order_form = OrderForm()
 
     if not stripe_public_key:
@@ -104,12 +111,14 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """ View handling the successful checkout message"""
+    """
+    Handle successful checkouts
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order placed successfully! Your order \
-        number is {order_number}. A confirmation email will be sent to \
-            {order.email}.')
+        number is {order_number}. A confirmation email will be sent \
+            to {order.email}.')
 
     if 'cart' in request.session:
         del request.session['cart']
