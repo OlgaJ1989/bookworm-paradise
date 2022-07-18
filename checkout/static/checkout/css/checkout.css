@@ -46,6 +46,16 @@
     color: #7C3F5A;
 }
 
+select,
+select option {
+    color: #7C3F5A;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
 /* Order summary container */
 
 #book-title-checkout {
