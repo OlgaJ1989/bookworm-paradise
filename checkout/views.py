@@ -1,12 +1,32 @@
 """ File storing views for the checkout app """
 import stripe
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+import json
+from django.shortcuts import render, redirect, reverse, \
+    get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from cart.contexts import cart_contents
+from products.models import Book
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Book
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -57,7 +77,7 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "Your bag is empty!")
+            messages.error(request, "Your cart is empty!")
             return redirect(reverse('books'))
         current_cart = cart_contents(request)
         total = current_cart['grand_total']
