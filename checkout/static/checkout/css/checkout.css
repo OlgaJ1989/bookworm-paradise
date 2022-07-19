@@ -46,14 +46,16 @@
     color: #7C3F5A;
 }
 
+.country-input {
+    background-color: #7C3F5A;
+    border: white solid 2px;
+    font-style: italic;
+    color: white;
+}
+
 select,
 select option {
     color: #7C3F5A;
-}
-
-select:invalid,
-select option[value=""] {
-    color: #aab7c4 !important;
 }
 
 /* Order summary container */
@@ -109,7 +111,7 @@ select option[value=""] {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(236, 198, 240, 0.85);
+    background: rgba(124, 63, 90, 0.85);
     z-index: 9999;
 }
 
