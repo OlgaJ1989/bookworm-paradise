@@ -102,7 +102,7 @@
             <form method="POST" action="#" class="text-left">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <input type="submit" value="Submit review" class="submit-review">
+                <input type="submit" value="Submit review" class="submit-review" id="review-submit-btn">
             </form>
             {% else %}
             <p>You must be logged in to leave a review!</p>
