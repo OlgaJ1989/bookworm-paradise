@@ -248,7 +248,7 @@ footer {
     color: white;
 }
 
-/* book_details.html (Book detail page */
+/* book_details.html (Book detail page) */
 
 .img-thumbnail {
     border-color: #7C3F5A;
@@ -333,12 +333,11 @@ input[type="text"] {
 
 .textarea {
     background-color: #7C3F5A;
-    color: white;
     border: white solid 2px;
 }
 
 ::placeholder {
-    color: white !important;
+    color: rgb(190, 187, 187) !important;
 }
 
 /* cart.html */
