@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Book, Genre, Review
-from .forms import ReviewForm
+from .forms import ReviewForm, BookForm
 
 
 def all_books(request):
@@ -89,3 +89,14 @@ def delete_review(request, review_id):
                     request, "You have deleted your review!")
         return redirect('books')
     return redirect('account_login')
+
+
+def add_book(request):
+    """ Add a book to the store """
+    form = BookForm()
+    template = 'products/add_book.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
