@@ -27,3 +27,8 @@ class BookForm(forms.ModelForm):
         friendly_names = [(g.id, g.get_friendly_name()) for g in genres]
 
         self.fields['genre'].choices = friendly_names
+        self.fields['genre'].widget.attrs['class'] = 'add-form-input'
+        self.fields['price'].widget.attrs['class'] = 'add-form-input'
+        self.fields['rating'].widget.attrs['class'] = 'add-form-input'
+        self.fields['image_url'].widget.attrs['class'] = 'add-form-input'
+        

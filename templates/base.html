@@ -54,7 +54,7 @@
                         <div class="dropdown-menu border-0" aria-labelledby="navbar-dropdown">
                             {% if user.is_authenticated %}
                             {% if user.is_superuser %}
-                            <a href="" class="dropdown-item">Management</a>
+                            <a href="{% url 'add_book' %}" class="dropdown-item">Book Management</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

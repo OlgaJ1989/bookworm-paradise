@@ -15,8 +15,7 @@
                 </a>
                 {% else %}
                 <a href="">
-                    <img class="card-img-top img-fluid w-50 img-center img-fluid img-thumbnail"
-                        src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ book.title }}">
+                    <img class="img-thumbnail" src="{{ MEDIA_URL }}no-photo.jpeg" alt="{{ book.title }}">
                 </a>
                 {% endif %}
             </div>
@@ -34,7 +33,7 @@
                 <small style="color:#7C3F5A"><i class="fas fa-star mr-1" style="color: #7C3F5A"></i>{{ book.rating }} /
                     5</small>
                 {% else %}
-                <small>No Rating</small>
+                <small style="color:#7C3F5A"><i class="fas fa-star mr-1" style="color: #7C3F5A"></i>No Rating</small>
                 {% endif %}
                 <br>
                 <small style="color:#7C3F5A"><strong>Publisher:</strong> {{ book.publisher }}</small><br>

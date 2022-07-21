@@ -383,7 +383,8 @@ input[type="text"] {
 
 .update-book,
 .delete-book,
-.submit-review {
+.submit-review,
+input[id='id_image'] {
     background: #7C3F5A;
     color: white;
     border-style: solid;
@@ -417,18 +418,31 @@ input[type="text"] {
 
 .custom-toast {
     overflow: visible;
-    background: #e9bcc1;
+    color: #7C3F5A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#toast-book-title {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+.cart-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
     color: #7C3F5A;
 }
+
+
 
 .cart-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-.toast-header {
-    background-color: #7C3F5A;
 }
 
 /* allauth templates */
@@ -469,4 +483,17 @@ input[type='submit']:focus {
 
 .allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
+}
+
+/* add_book.html */
+
+.add-form-input {
+    background-color: #7C3F5A;
+    border: white solid 2px;
+    color: white;
+}
+
+.invalid-feedback {
+    color: red !important;
+    font-size: 16px !important;
 }

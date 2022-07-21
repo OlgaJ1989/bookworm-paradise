@@ -93,7 +93,17 @@ def delete_review(request, review_id):
 
 def add_book(request):
     """ Add a book to the store """
-    form = BookForm()
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Book added successfuly!')
+            return redirect(reverse('add_book'))
+        else:
+            messages.error(request, 'Book addition failed. Please ensure the form is valid.')
+    else:
+        form = BookForm()
+
     template = 'products/add_book.html'
     context = {
         'form': form,
