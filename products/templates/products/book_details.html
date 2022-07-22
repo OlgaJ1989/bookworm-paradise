@@ -39,9 +39,13 @@
                 <small style="color:#7C3F5A"><strong>Publisher:</strong> {{ book.publisher }}</small><br>
                 <small style="color:#7C3F5A"><strong>Binding:</strong> {{ book.binding }}</small><br>
                 <small style="color:#7C3F5A"><strong>Pages:</strong> {{ book.pages }}</small>
+                {% if request.user.is_superuser %}
+                <div class="pt-1"><br><small><a href="{% url 'edit_book' book.id %}" style="color: #0455ab">Edit</a> |
+                        <a href="{% url 'delete_book' book.id %}" style="color: rgb(195, 7, 7);">Delete</a></small>
+                </div>
+                {% endif %}
                 <hr class="rounded my-4">
                 <p class="mb-0 text-left" style="font-size: 30px;" id="price">£{{ book.price }}</p>
-
                 <form class="form" action="{% url 'add_to_cart' book.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -107,7 +111,7 @@
             <p>You must be logged in to leave a review!</p>
             <a href="{% url 'account_login' %}" class="btn shop-now-btn">Log In</a>
             {% endif %}
-           
+
         </div>
     </div>
 </div>

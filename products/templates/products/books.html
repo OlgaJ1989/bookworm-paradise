@@ -87,6 +87,11 @@
                                     <small><i class="fas fa-star mr-1" style="color: white; font-size: 100%;"></i>No
                                         Rating</i></small>
                                     {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3"> <a href="{% url 'edit_book' book.id %}"
+                                            style="color: yellow;">Edit</a> | <a
+                                            href="{% url 'delete_book' book.id %}" style="color: yellow;">Delete</a></small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
