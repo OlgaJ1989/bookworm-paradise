@@ -81,12 +81,12 @@ def delete_review(request, review_id):
     review = Review.objects.get(pk=review_id)
     if request.user != review.author:
         messages.error(
-                    request, "You are not authorised to delete this review!")
+            request, "You are not authorised to delete this review!")
         return redirect('account_login')
     if request.method == 'GET':
         review.delete()
         messages.success(
-                    request, "You have deleted your review!")
+            request, "You have deleted your review!")
         return redirect('books')
     return redirect('account_login')
 
@@ -100,13 +100,40 @@ def add_book(request):
             messages.success(request, 'Book added successfuly!')
             return redirect(reverse('add_book'))
         else:
-            messages.error(request, 'Book addition failed. Please ensure the form is valid.')
+            messages.error(
+                request, 'Book addition failed. \Please ensure the form is valid.')
     else:
         form = BookForm()
 
     template = 'products/add_book.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_book(request, book_id):
+    """ Edit a book in the store """
+    book = get_object_or_404(Book, pk=book_id)
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES, instance=book)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Book updated successfuly!')
+            return redirect(reverse('book_details', args=[book.id]))
+        else:
+            messages.error(
+                request, 'Failed to update book. \
+                    Please ensure the form is valid.')
+    else:
+        form = BookForm(instance=book)
+        messages.info(request, f'You are editing {book.title}')
+
+    template = 'products/edit_book.html'
+    context = {
+        'form': form,
+        'book': book,
     }
 
     return render(request, template, context)
