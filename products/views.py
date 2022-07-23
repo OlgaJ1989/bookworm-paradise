@@ -78,22 +78,6 @@ def book_details(request, book_id):
 
 
 @login_required
-def delete_review(request, review_id):
-    """ View allowing users do delete existing reviews. """
-    review = Review.objects.get(pk=review_id)
-    if request.user != review.author:
-        messages.error(
-            request, "You are not authorised to delete this review!")
-        return redirect('account_login')
-    if request.method == 'GET':
-        review.delete()
-        messages.success(
-            request, "You have deleted your review!")
-        return redirect('books')
-    return redirect('account_login')
-
-
-@login_required
 def add_book(request):
     """ Add a book to the store """
     if not request.user.is_superuser:
@@ -166,27 +150,43 @@ def delete_book(request, book_id):
 
 def edit_review(request, review_id):
     """ Edit a book review """
-    #book = get_object_or_404(Book, sku=book_id)
+
     review = get_object_or_404(Review, pk=review_id)
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
             messages.success(request, 'Review updated successfuly!')
-            return redirect(reverse('book_details', args=[review.id]))
+            return redirect(reverse('book_details', args=[review.book.id]))
         else:
             messages.error(
                 request, 'Failed to update review. \
                     Please ensure the form is valid.')
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, f'You are editing the {review.title} review')
+        messages.info(request, f'You are editing a review \
+            titled "{review.title}"')
 
     template = 'products/edit_review.html'
     context = {
         'form': form,
         'review': review,
-        #'book': book,
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ View allowing users do delete existing reviews. """
+    review = Review.objects.get(pk=review_id)
+    if request.user != review.author:
+        messages.error(
+            request, "You are not authorised to delete this review!")
+        return redirect('account_login')
+    if request.method == 'GET':
+        review.delete()
+        messages.success(
+            request, "You have deleted your review!")
+        return redirect(reverse('book_details', args=[review.book.id]))
+    return redirect('account_login')
