@@ -87,18 +87,17 @@ hr {
 }
 
 .dropdown-menu {
-    background-color: #7C3F5A;
-    border-style: solid;
-    border-width: 2px;
-    border-color: white;
+    background-color: #f5dde0;
+    border: 2px solid #7C3F5A !important;
 }
 
 .dropdown-divider {
-    color: white;
+    border-color: #7C3F5A;
 }
 
 .dropdown-item {
-    color: white !important;
+    color: #7C3F5A !important;
+    font-weight: 800;
 }
 
 /* Search bar */

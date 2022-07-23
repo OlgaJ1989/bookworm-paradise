@@ -28,19 +28,6 @@
                 <a href="{% url 'books' %}?genre=romance" class="dropdown-item">Romance</a>
                 <a href="{% url 'books' %}?genre=science_fiction" class="dropdown-item">Science-Fiction</a>
         </li>
-        <li class="nav-item mr-2 dropdown">
-            <a class="nav-link" href="#" id="offers" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Offers</a>
-            <div class="dropdown-menu" aria-labelledby="offers">
-                <a href="" class="dropdown-item">By Title</a>
-                <a href="" class="dropdown-item ">By Author</a>
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Genre</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <div class="dropdown-divider"></div>
-                <a href="" class="dropdown-item">All Offers</a>
-            </div>
-        </li>
     </ul>
     <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
