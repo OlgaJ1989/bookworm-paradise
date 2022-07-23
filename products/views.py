@@ -162,3 +162,31 @@ def delete_book(request, book_id):
     book.delete()
     messages.success(request, 'Book deleted!')
     return redirect(reverse('books'))
+
+
+def edit_review(request, review_id):
+    """ Edit a book review """
+    #book = get_object_or_404(Book, sku=book_id)
+    review = get_object_or_404(Review, pk=review_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfuly!')
+            return redirect(reverse('book_details', args=[review.id]))
+        else:
+            messages.error(
+                request, 'Failed to update review. \
+                    Please ensure the form is valid.')
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, f'You are editing the {review.title} review')
+
+    template = 'products/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+        #'book': book,
+    }
+
+    return render(request, template, context)

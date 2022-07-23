@@ -1,11 +1,14 @@
+""" File storing form information for products app """
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Review, Book, Genre
 
 
 class BookForm(forms.ModelForm):
+    """ Data for the book add/edit form and widgets to be displayed. """
 
     class Meta:
+        """ Meta class specifying fields and widgets to be displayed. """
         model = Book
         fields = '__all__'
 
@@ -25,8 +28,9 @@ class BookForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
-
+    """ Data for review form and widgets to be displayed. """
     class Meta:
+        """ Meta class specifying fields and widgets to be displayed. """
         model = Review
         fields = ('title', 'body',)
         widgets = {
