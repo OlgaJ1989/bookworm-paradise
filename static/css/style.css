@@ -485,7 +485,7 @@ input[type='submit']:focus {
     display: none;
 }
 
-/* add_book.html */
+/* Book form (add/edit book) */
 
 .add-form-input {
     background-color: #7C3F5A;
@@ -496,4 +496,13 @@ input[type='submit']:focus {
 .invalid-feedback {
     color: red !important;
     font-size: 16px !important;
+}
+
+.img-input {
+    background: #7C3F5A;
+    color: white;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
 }
