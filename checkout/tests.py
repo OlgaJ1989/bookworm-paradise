@@ -1,7 +1,7 @@
 """ Automated testing """
 from django.test import TestCase
 from django.urls import resolve, reverse
-from .views import cache_checkout_data, checkout
+from .views import cache_checkout_data, checkout, checkout_success
 
 
 class TestUrls(TestCase):
@@ -22,3 +22,12 @@ class TestUrls(TestCase):
         url = reverse('checkout')
         print(resolve(url))
         self.assertEqual(resolve(url).func, checkout)
+
+    def test_checkout_success_url_renders_checkout_success_view(self):
+        """
+        Test 'checkout_success' url is working and rendering
+        'checkout_success' view.
+        """
+        url = reverse('checkout_success', args=[1])
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, checkout_success)

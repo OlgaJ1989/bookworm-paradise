@@ -2,12 +2,20 @@
 from django.test import TestCase
 from django.urls import resolve, reverse
 from .views import (
-    book_details, add_book, edit_book,
+    all_books, book_details, add_book, edit_book,
     delete_book, edit_review, delete_review)
 
 
 class TestUrls(TestCase):
     """ Test urls.py """
+
+    def test_books_url_renders_all_books_view(self):
+        """
+        Test 'books' url is working and rendering 'all_books' view.
+        """
+        url = reverse('books')
+        print(resolve(url))
+        self.assertEqual(resolve(url).func, all_books)
 
     def test_book_details_renders_book_details_view(self):
         """
