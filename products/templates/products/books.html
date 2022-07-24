@@ -9,7 +9,7 @@
             <div class="row mt-1 mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector" class="sort-box custom-select custom-select-sm border-rounded">
+                        <select id="sort-selector" class="sort-box custom-select custom-select-sm border-rounded" aria-label="Sort by">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                             </option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
@@ -63,7 +63,7 @@
                         <div class="card-body pb-0">
                             <h3 class="mb-0">{{ book.title }}</h>
                                 <br>
-                                <p>{{ book.author }}</p>
+                                <h4>{{ book.author }}</h4>
                         </div>
                         <hr>
                         <div class="card-footer pt-0 border-0 text-left">

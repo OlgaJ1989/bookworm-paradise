@@ -31,10 +31,12 @@
     </ul>
     <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
-            <input class="form-control border rounded-left" id="search-bar"
-                style="color: white;" type="text" name="q" placeholder="Search books">
+            <label for="search-bar" class="visually-hidden" style="color:white">Search here</label>
+            <input class="form-control border rounded-left search-placeholder" id="search-bar" type="text" name="q"
+                placeholder="Search all books"></label>
             <div class="input-group-append">
-                <button class="form-control btn btn-black border border-black rounded-right" type="submit">
+                <button class="form-control btn btn-black border border-black rounded-right" aria-label="Search"
+                    type="submit">
                     <span class="icon">
                         <i class="fas fa-search" style="color: white;"></i>
                     </span>

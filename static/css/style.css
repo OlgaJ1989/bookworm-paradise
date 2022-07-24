@@ -83,6 +83,13 @@ hr {
     font-weight: bolder;
 }
 
+#top-nav h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    font-weight: bolder;
+}
+
 .nav-font {
     color: white;
 }
@@ -103,21 +110,31 @@ hr {
 
 /* Search bar */
 
-::placeholder {
-    font-style: italic;
-}
-
 #search-bar {
     background-color: #9d5173;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+  }
+
+.search-placeholder::placeholder {
+    color: white !important;
 }
 
 /* Delivery banner */
 
 #delivery-banner {
-    background-color: #cda0a5;
+    background-color: #f0c7cc;
 }
 
-#delivery-banner h4 {
+#delivery-banner h2 {
     font-family: 'Bebas Neue', sans-serif;
     color: #7C3F5A;
     letter-spacing: 2px;
@@ -184,8 +201,10 @@ footer {
 
 #price {
     font-family: 'Bebas Neue', sans-serif;
+    color: #7C3F5A;
     letter-spacing: 3px;
     font-size: 40px;
+    font-weight: bolder;
 }
 
 .jumbotron {
@@ -230,6 +249,13 @@ footer {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     font-weight: bolder;
+}
+
+.card h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
 }
 
 #book-number-container {
@@ -338,6 +364,7 @@ input[type="text"] {
 
 ::placeholder {
     color: rgb(190, 187, 187) !important;
+    font-style: italic;
 }
 
 /* cart.html */
@@ -437,8 +464,6 @@ input[id='id_image'] {
     color: #7C3F5A;
 }
 
-
-
 .cart-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
@@ -505,4 +530,5 @@ input[type='submit']:focus {
     border-style: solid;
     border-width: 1px;
     border-color: white;
+    width: 100%;
 }

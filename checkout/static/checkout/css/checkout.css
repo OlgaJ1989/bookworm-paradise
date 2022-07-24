@@ -58,6 +58,11 @@ select option {
     color: #7C3F5A;
 }
 
+#amount-info,
+.fa-exclamation-circle {
+    font-size: 18px !important;
+}
+
 /* Order summary container */
 
 #book-title-checkout {
@@ -66,6 +71,10 @@ select option {
     letter-spacing: 2px;
     color: #7C3F5A;
     font-weight: lighter;
+}
+
+.checkout-total {
+    font-size: 17px !important;
 }
 
 /* checkout_success.html */
