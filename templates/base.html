@@ -55,7 +55,7 @@
                                 <p class="my-0">Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="navbar-dropdown">
+                        <div class="dropdown-menu border-0" id="main-menu-link" aria-labelledby="navbar-dropdown">
                             {% if user.is_authenticated %}
                             {% if user.is_superuser %}
                             <a href="{% url 'add_book' %}" class="dropdown-item">Book Management</a>

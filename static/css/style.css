@@ -69,7 +69,8 @@ hr {
     border: white solid 2px !important;
 }
 
-.navbar li {
+.navbar li,
+#main-menu-link {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: bold;
