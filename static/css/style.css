@@ -532,3 +532,11 @@ input[type='submit']:focus {
     border-color: white;
     width: 100%;
 }
+
+/* Media queries */
+
+@media (max-width: 991px) {
+    #delivery-banner h2 {
+        font-size: .9rem;
+    }
+}
