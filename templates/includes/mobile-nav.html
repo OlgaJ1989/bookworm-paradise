@@ -1,3 +1,24 @@
+<li class="list-inline-item dropdown">
+    <!-- Account -->
+    <a class="nav-link d-block d-lg-none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-expanded="false" aria-label="Account">
+        <div class="text-center nav-font">
+            <div><i class="fas fa-user fa-lg"></i></div>
+        </div>
+    </a>
+    <div class="dropdown-menu border-0" aria-label="navbar-dropdown">
+        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        <a href="{% url 'add_book' %}" class="dropdown-item">Management</a>
+        {% endif %}
+        <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+        {% endif %}
+    </div>
+</li>
 <li class="list-inline-item">
     <!-- Search -->
     <a class="nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-label="Search"
@@ -26,30 +47,9 @@
         </form>
     </div>
 </li>
-<li class="list-inline-item dropdown">
-    <!-- Account -->
-    <a class="nav-link d-block d-lg-none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-expanded="false" aria-label="Account">
-        <div class="text-center nav-font">
-            <div><i class="fas fa-user fa-lg"></i></div>
-        </div>
-    </a>
-    <div class="dropdown-menu border-0" aria-label="navbar-dropdown">
-        {% if user.is_authenticated %}
-        {% if user.is_superuser %}
-        <a href="{% url 'add_book' %}" class="dropdown-item">Management</a>
-        {% endif %}
-        <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-        {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-        {% endif %}
-    </div>
-</li>
 <li class="list-inline-item">
     <!-- Cart -->
-    <a href="{% url 'view_cart' %}" aria-label="Cart">
+    <a class="nav-link d-block d-lg-none" href="{% url 'view_cart' %}" aria-label="Cart">
         <div class="text-center nav-font">
             <div><i class="fas fa fa-shopping-cart fa-lg"></i></div>
         </div>
