@@ -18,7 +18,7 @@ i {
     margin: 1%;
 }
 
-a { 
+a {
     text-decoration: none !important;
 }
 
@@ -116,13 +116,15 @@ hr {
 
 .visually-hidden:not(:focus):not(:active) {
     position: absolute !important;
-    height: 1px; 
+    height: 1px;
     width: 1px;
     overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap; /* added line */
-  }
+    white-space: nowrap;
+    /* added line */
+}
 
 .search-placeholder::placeholder {
     color: white !important;
@@ -229,6 +231,19 @@ footer {
     font-weight: 300;
     color: white;
     letter-spacing: 2px;
+}
+
+#mc-embedded-subscribe,
+#mce-EMAIL {
+    background: #7C3F5A !important;
+    color: white !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: white !important;
+}
+
+#mce-EMAIL {
+    border-width: 2px !important;
 }
 
 /* books.html (Products page) */
@@ -538,5 +553,17 @@ input[type='submit']:focus {
 @media (max-width: 991px) {
     #delivery-banner h2 {
         font-size: .9rem;
+    }
+
+    #welcome {
+        font-size: 30px;
+    }
+
+    #newsletter-header {
+        font-size: 30px !important;
+    }
+
+    #welcome-msg {
+        font-size: 18px !important;
     }
 }
