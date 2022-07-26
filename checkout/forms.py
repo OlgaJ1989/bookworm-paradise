@@ -1,9 +1,13 @@
+""" File specyfying implemented forms and their settings. """
 from django import forms
 from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """ Order form for entering user details when an order is placed """
+
     class Meta:
+        """ Meta class specifying fields to be displayed and their order. """
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',

@@ -1,3 +1,4 @@
+""" Views for the bookworm_paradise project"""
 from django.shortcuts import render
 
 

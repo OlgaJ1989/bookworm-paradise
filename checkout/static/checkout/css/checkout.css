@@ -82,6 +82,7 @@ select option {
 .order-confirmation-wrapper {
     background-color: #7C3F5A;
 }
+
 .checkout-success p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
@@ -100,7 +101,7 @@ select option {
 }
 
 .order-info-label {
-    font-family: 'Bebas Neue', sans-serif; 
+    font-family: 'Bebas Neue', sans-serif;
     color: #e9bcc1;
     letter-spacing: 3px;
     font-size: 20px;
@@ -114,8 +115,8 @@ select option {
 /* Loading overlay */
 
 #loading-overlay {
-	display: none;
-	position: fixed;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -125,7 +126,7 @@ select option {
 }
 
 .loading-spinner {
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;

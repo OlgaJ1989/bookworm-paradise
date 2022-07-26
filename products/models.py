@@ -12,11 +12,12 @@ class Genre(models.Model):
         return self.name
 
     def get_friendly_name(self):
+        """ Get friendly name for Genre """
         return self.friendly_name
 
 
 class Book(models.Model):
-    """ model storing individual books' details """
+    """ Model storing individual books' details """
     genre = models.ForeignKey(
         'Genre', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)

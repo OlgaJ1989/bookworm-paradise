@@ -1,9 +1,12 @@
+""" File storing form information for profiles app """
 from django import forms
 from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """ Data for the user profile form and fields to be displayed. """
     class Meta:
+        """ Meta class specifying what model and fields to use """
         model = UserProfile
         exclude = ('user',)
 

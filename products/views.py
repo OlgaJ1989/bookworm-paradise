@@ -159,7 +159,7 @@ def edit_review(request, review_id):
         messages.error(
             request, "You are not authorised to edit this review!")
         return redirect('account_login')
-    
+
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():

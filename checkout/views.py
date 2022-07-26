@@ -1,8 +1,9 @@
 """ File storing views for the checkout app """
 import json
 import stripe
-from django.shortcuts import render, redirect, reverse, \
-    get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -16,6 +17,7 @@ from .models import Order, OrderLineItem
 
 @require_POST
 def cache_checkout_data(request):
+    """ Stripe checkout cache data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -32,6 +34,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ View rendering checkout page """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -73,7 +76,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            # Save the info to the user's profile if all is well
+            # Save info to the user's profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
@@ -96,8 +99,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the
-        # user has in their profile
+        # Attempt to prefill the form if info exists
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -138,11 +140,11 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
+        # Attach user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
+        # Save user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,

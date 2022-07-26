@@ -1,4 +1,4 @@
-''' File storing checkout app models '''
+""" File storing checkout app models """
 import uuid
 from django.db import models
 from django.db.models import Sum
@@ -9,10 +9,11 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    ''' Model storing the order information '''
+    """ Model storing the order information """
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+    user_profile = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='orders')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)

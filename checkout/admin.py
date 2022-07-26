@@ -1,13 +1,16 @@
+""" File specyfying settings for the admin panel. """
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """ Order LineItem admin """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """ Order admin """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
