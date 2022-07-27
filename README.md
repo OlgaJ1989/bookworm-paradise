@@ -132,7 +132,7 @@ The aim of the website is:
 
 User stories for this project can be viewed on [Trello](https://trello.com/b/S14lxcQ0/bookworms-paradise).
 
-![UX Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/ux_epic.PNG)
+![UX Epic](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/ux_epic.PNG)
 
 1. As a user, I want the main purpose of the website to be clear so that upon entering I immediately know what it's purpose is.
     * Acceptance Criteria:
@@ -225,7 +225,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Implementation:
         - A delete button will be added to each review but will only be visible to each review's logged in author, allowing them to delete the review.
 
-![SE Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/se_epic.PNG)
+![SE Epic](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/se_epic.PNG)
 
 15. As a user, I want to be able to easily view the total for the books in my cart (without navigating to it) so that I can avoid spending too much.
     * Acceptance criteria:
@@ -270,7 +270,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Implementation:
         - An order history section will be created and added to the user's profile page.
 
-![UP Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/up_epic.PNG)
+![UP Epic](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/up_epic.PNG)
 
 22. As a user, I want to be able to register for an account so I can view my profile.
     * Acceptance Criteria:
@@ -296,7 +296,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Implementation:
         - A profile page will be created, containing user's personal details, such as delivery address, and their order history.
 
-![AP Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/ap_epic.PNG)
+![AP Epic](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/ap_epic.PNG)
 
 26. As a site admin, I want to be able to add, edit and delete books from my shop.
     * Acceptance Criteria:
