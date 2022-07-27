@@ -1,108 +1,596 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Bookworm Paradise
 
-Welcome OlgaJ1989,
+Bookworm Paradise is an online, independent, family-run bookshop designed to allow customers to buy books, as well as read (everyone), edit and delete reviews (authorised users). 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Mockup](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/mockup.PNG)
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Existing features
 
-`python3 -m http.server`
+* Navigation Bar 
+    * Includes direct links to all parts of the website, allowing the user to easily navigate between them.
+        1. All users can see the folowing links in the navbar: Account and Cart (in top part of the navbar), Home, All Books, Genres, Newsletter and Contact Us (in bottom part of the navbar).
 
-A blue button should appear to click: _Make Public_,
+           ![Navigation](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/navbar.PNG) 
+        
+        2. All users can see the search bar, allowing them to search for any book.
 
-Another blue button should appear to click: _Open Browser_.
+           ![Search-bar](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/search-bar.PNG) 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+        3. When logged OUT, the user can see the following links when clicking on the Account dropdown: Register, Login.
 
-A blue button should appear to click: _Make Public_,
+           ![Navigation Logged Out](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/logged-out.PNG)
 
-Another blue button should appear to click: _Open Browser_.
+        4. When logged IN, the user can see the following links when clicking on the Account dropdown: Management, Profile, Logout.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+           ![Navigation Logged In](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/logged-in.PNG)
 
-To log into the Heroku toolbelt CLI:
+        5. On smaller devices the menu links scale down to a toggler, allowing for a cleaner design.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+           ![Navigation Responsive](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/mobile-nav.PNG)
+      
+* Landing page image with overlaying jumbotron
+    * The index.html page (Home) includes a background picture of books, with a button leading directly toe the shop where users can view all available books. 
+    
+      ![Jumbotron](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Welcome to Bookworm Paradise section
+    * A small section welcoming users to the store. 
 
-------
+      ![Welcome](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/welcome.PNG)
 
-## Release History
+* Newsletter section
+    * A section containing the newsletter subscription form, where users can enter their email which will then be saved in MailChimp database. In a real life scenarion, this could then be used to create a mailing list to send out newsletters.  
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+      ![Newsletter](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/newsletter.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+* Interactive footer across all pages
+    * It consists of clickable icons linking the user to a choice of social media platforms (Facebook, Twitter, Instagram). All links open in new tabs so the user does not have to leave the Bookworm Paradise page.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+      ![Footer](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/footer.PNG)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* All Books page
+    * This page list all books available to purchase on the site, with clickable book ocvers that lead to the chosen book's detail page when clicked. It states how many books are available in the shop in total and has a 'Sort by...' select box where users can sort books by title, author, genre, price and rating.  
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+      ![All Books](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/all-books.PNG) 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    * The books on this page can also be sorted into Genres by clicking on the Genres link in the navbar. Once a genre is chosen, the page will display only the books in the chosen genre and update their number. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+* Book detail page
+    * Once a user selects a book and clicks on its cover, they will be taken to the book's detail page containing all the information about it, such as price, description, number of pages, etc. If a user is an admin / shop owner, they will also be able to edit or delete a book on this page, using the 'Edit' and 'Delete' buttons located above the price. 
+    
+      ![Book details](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/book-detail.PNG) 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+* Book detail page - review section
+    * At the bottom of each book's detail page, users can find a section where they can read existing reviews or add their own. Users need to be logged in to leave reviews which they can then edit or delete. They will only see a review Once a user selects a book and clicks on its cover, they will be taken to the book's detail page containing all the information about it, such as price, description, number of pages, etc. If a user is an admin / shop owner, they will also be able to edit or delete a book on this page, using the 'Edit' and 'Delete' buttons located above the price. 
+    
+      ![Book details](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/book-detail.PNG) 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* Contact page
+    * The contact.html page consists of restaurant contact info (phone, address, email) and an embedded Google map with the location. 
+    
+      ![Contact](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* Reservation / booking page
+    * The 'Book' tab links with a page that consists of a reservation / booking form which allows the user to book a table for a chosen date and time up to a day before and for up to 6 guests.  
+    
+      ![Reservation](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* My Bookings page
+    * The 'My Bookings' tab display all the bookings that the user has made. It only shows bookings made by the person who is currently logged in. From here the user can edit and delete existing bookings.      
+    
+      ![Bookings](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* Deletion confirmation page
+    * A template that renders after the user chooses to delete a booking, giving them a chance to confirm their choice or go back to safety.      
+    
+      ![Delete](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Sign In / Login page
+    * Allows the user to log in to an existing account in order to book a table and view existing bookings. It also provides the user with the link to register.      
+    
+      ![Sign In](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* Sign out / Logout confirmation page
+    * A template that renders after the user chooses to log out, giving them a chance to confirm in case they clicked the link by mistake.       
+    
+      ![Sign Out](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+*  404 page
+    * A custom 404 page has been made to make it easy for the user to come back to the game page after they tried to move to a non-existent page.
 
-------
+      ![404](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-## FAQ about the uptime script
+* A favicon
+    * A favicon has been added to make it easier for users to find the Taste of Poland page if multiple tabs are open. 
+    
+      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
 
-**Why have you added this script?**
+### Features left to implement
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+I am working on applying logic that will stop users from booking a certain table at a certain time and date if it has already been booked by someone else. 
 
-**How will this affect me?**
+## User Experience Design
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Taste of Poland is a responsive website of a non-existent Polish restaurant in Brighton. 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The aim of the website is: 
+- to give users the possibility of viewing the restaurant's Menu and photo Gallery so that they can decide in advance of their visit whether the restaurant and its offering is something they would like to try out;
+- to give users the possibility of registering for an account in order to be able to book a table so that the bookings are held in a secure environment where no one can access and tamper with them without login details;
+- to give the site owners / authorised staff the possibility of viewing the bookings users made so they can be modified or deleted if needed;
+- to give users the possibility of accessing the website and booking a table on any device;
+- to give users the details necessary for them to be able to contact the venue.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### User Stories
 
-**So….?**
+User stories for this project can be viewed on [Trello](https://trello.com/b/OdCkLJxF/kanban-template).
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![UX Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/ux_epic.PNG)
 
-**Can I opt out?**
+1. As a user, I want the main purpose of the website to be clear so that upon entering I immediately know what its purpose is.
+    * Acceptance Criteria:
+        - Restaurant logo ad information is displayed on the main page with clear information on what the site's purpose is.
+    * Implementation:
+        - The Home page will contain the main website title of "Taste of Poland", situated in the navbar section. 
+        - It will also contain information about the site's general purpose and about the restaurant itself, to make what the site is intended for immediately clear to the user.
+        
+2. As a user, I want to be able to easily navigate between the different parts / pages of the website so that I can find content quickly and easily on any device.
+    * Acceptance Criteria:
+        - Navigation menu to allow users to navigate the site with ease.
+        - Collapsible mobile menu to allow users to navigate the site from a mobile device. 
+        - All navigation links should navigate to the correct pages.
+        - The 'My Reservations' dropdown option should only appear for signed-in users.
+    * Implementation:
+        - A navigation menu will be created to allow users to navigate through the site. It will be collapsible on a mobile device, and positioned at the top right of the logo element.
+        - When a user is not logged in, 'Home', 'Menu', 'Reservations' (with a 'Reserve a Table' dropdown), 'Gallery', 'Contact' 'Register' and 'Login' navigation items will be displayed.
+        - When a user is logged in, an extra 'My Reservations' dropdown will appear under the 'Reservations' link, and 'Register' and 'Login' will disappear, with 'Logout' appearing in their place.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+3. As a user, I want to be able to easily find links to any social media channels that the restaurant might be running.
+    * Acceptance Criteria:
+        - Social media links included to allow users to navigate to linked accounts with ease.
+        - All links should navigate to the correct pages.
+    * Implementation:
+        - Social media links in the form of FontAwesome icons will be added to the footer and appear on each page.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+4. As a user, I want to be able to view the menu so I can choose what I would like to order in advance of my visit.
+    * Acceptance Criteria:
+        - A list of dishes that the restaurant serves, along with their descriptions and pricing.
+        - Clear division between types of dishes.
+    * Implementation:
+        - The 'Menu' tab will include an interactive menu consisting of three tabs: 'Soups', 'Mains' and 'Desserts'. Users will be able to easily and quickly switch between these tabs to reveal the list of relevant dishes.
 
-**Anything more?**
+5. As a user, I want to be able to contact the restaurant in case I have any questions regarding the venue or a reservation I made, or if I encounter any issues with the website. 
+    * Acceptance Criteria:
+        - A 'Contact' page which includes the venue's contact information.
+    * Implementation:
+        - A 'Contact' page will be created and it will include the venue's contact information (such as an address, email and phone number) as well as an embedded Google map showing the restaurant's location. This page will also include the Opening Hours.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+6. As a user, I want to be able to view a photo gallery of dishes, so I can decide whether they look appealing enough for me to visit and try them out.
+    * Acceptance Criteria:
+        - A 'Gallery' page displaying photos of the dishes present on the restaurant's menu.
+    * Implementation:
+        - A 'Gallery' page will be created, using high-quality photos of the food the restaurant serves. It will be made responsive so that users can enjoy good resolution also on smaller devices. 
+ 
+![Admin Profile Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/ap_epic.PNG)
 
----
+7. As a site admin, I want to be able to view, modify or delete existing bookings.
+    * Acceptance Criteria:
+        - An 'Admin' page displaying all existing bookings for every user, where the restaurant's owners / authorised staff can view, modify and delete them.
+    * Implementation:
+        - A Django built-in admin panel will be utilised to create a page where staff authorised as Django 'superusers' can view the users that registered for an account, as well as view, modify, and delete their reservations if necessary.
 
-Happy coding!
+8. As a site admin, I want to make the option of reserving a table available only to registered users.
+    * Acceptance Criteria:
+        - Booking / reservation form not available for unregistered users.
+    * Implementation:
+        - If a user that is not logged in clicks on the 'Reserve a table' link in the 'Reservations' dropdown, they will be redirected straight to the 'Login' page. If they do not have login details, the information on the 'Login' page will direct them to the 'Register' page. The 'Reserve a table' link will display the booking form only if they are logged in.   
+
+![User Profile Epic](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/up_epic.PNG)
+
+9. As a user, I want to be able to create, view, edit and delete a table reservation.
+    * Acceptance Criteria:
+        - A custom booking form allowing the users to book a table for a chosen date and time.
+        - A 'My reservations' page displaying all the reservations that they have so far created.
+        - Functionality allowing the users to edit and delete the existing reservations.
+    * Implementation:
+        - A custom reservation form will be created (under 'Reserve a table' in the 'Reservations' dropdown), allowing registered users to book a table for a chosen date and time.
+        - When the booking is submitted, the user will be redirected to 'My reservations' page that will display the reservation details, such as the first and last name of the main guest, date, time, table and number of guests.
+        - 'Edit' and 'Delete' buttons will appear next to each created booking, allowing users to modify or cancel bookings easily.
+
+10. As a user, I want to be able to register for an account to be able to make reservations and store them in a secure environment.
+    * Acceptance Criteria:
+        - A custom registration form / page allowing the users to register for an account.
+    * Implementation:
+        - A reservation form / page will be created using the allauth library, allowing users to register for an account. 
+        
+
+11. As a user, I want to be able to log into my account to make a reservation and view my bookings.
+    * Acceptance Criteria:
+        - A custom login form allowing the users to log in to the website.
+    * Implementation:
+        - A login form will be created using the allauth library, allowing users to log in to an existing account.
+
+### Entity Relationship Diagram
+
+![ERD](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/erd.PNG)
+
+### Wireframes
+
+* Home
+
+    ![WireframeHome](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_home.PNG)
+
+* Menu
+
+    ![WireframeMenu](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_menu.PNG)
+
+* Gallery
+
+    ![WireframeGallery](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_gallery.PNG)
+
+* Book a table
+
+    ![WireframeReserve](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_booking_form.PNG)
+
+* Existing reservations
+
+    ![WireframeReservations](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_reservations.PNG)
+
+* Contact Us
+
+    ![WireframeContact](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_contact.PNG)
+
+* Register
+
+    ![WireframeRegister](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_register.PNG)
+
+* Login
+
+    ![WireframeLogin](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_login.PNG)
+
+
+## Technologies
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) has been used to structure the website.
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) has been used to style the website.
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to tweak the settings of login / logout notifications / messages.
+* [Python](https://www.python.org/) was used as the main language in which this project was coded.
+* [Django](https://www.djangoproject.com/) was the framework used to build this website.
+* [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) was used to create and style the front end of the website.
+* [Font Awesome](https://fontawesome.com/) icons have been used for the social media links in the Footer and on the Contact page.    
+* [Google Fonts](https://fonts.google.com/) have been used to import Tangerine and Roboto Slab fonts. 
+* [Favicon](https://favicon.io/) was used to create the favicon for the website.
+* [Techsini](http://techsini.com/multi-mockup/index.php) mockup generator was used to create the mockup image for the README.md file. 
+* [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) were used to inspect elements of the website and test different styles. 
+* [GitHub](https://github.com/) has been used to store the code, images, and other contents of the website. 
+* [Heroku](https://dashboard.heroku.com/apps) was used to deploy the game to the web.
+* [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
+* [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools) was used to run an audit of the website. 
+* [Grammarly](https://www.grammarly.com) was used to check for typos in Readme.md.
+
+
+## Testing
+
+### Manual testing
+
+* Check the responsiveness of the website on different screen sizes across different browsers (Chrome, Firefox, Opera, Edge).
+    * Test:
+        1. Open the website in each of the aforementioned browsers.
+        1. Right-click on the screen and choose 'Inspect' ('Inspect element' on Opera).
+        1. Grab and drag the responsive window slowly down to 300px and then back again, checking that everything is displayed correctly in each size / breakpoint.
+    * Result:
+        * All elements are responsive and display correctly in each of the browsers and each of the window sizes.
+        * Additionally, I also had a chance to check the responsiveness on several 'real' devices, such as Samsung Galaxy S8, Samsung Galaxy A42, Xiaomi POCO X Pro, iPhone X, iPhone 13 Pro, Samsung Galaxy Tab A. All elements are responsive and display correctly on each of these devices.
+
+* Check that the links in the navigation bar navigate to the correct pages. 
+    * Test:
+        1. Open the website in a browser.
+        1. Click on all navigation items one by one to make sure the attached links are correct and that they lead the user to the correct parts of the website.
+    * Result:
+        * All links working and directing users to the correct pages.
+
+* Check that the 'My reservations' tab in the 'Reservations' dropdown appears only if a user is signed in.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Click on the 'Reservations' dropdown in the navbar.
+        1. You should only see the 'Reserve my table' link / tab.
+    * Result:
+        1. When clicked, the 'Reservations' dropdown display only the 'Reserve my table' link / tab as expected. 
+
+* Check that the 'Reserve a table' tab in the 'Reservations' dropdown redirects to the 'Login' page if a user is signed out.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Click on the 'Reservations' dropdown in the navbar.
+        1. Click on 'Reserve a table'. 
+        1. You should be redirected to the 'Sign In' page.
+    * Result:
+        1. When clicked, the 'Reserve a table' button redirects to the 'Sign In' page as expected.  
+
+* Check that the 'Reserve a table' tab in the 'Reservations' dropdown displays a table reservation form if a user is signed in.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged in.
+        1. Click on the 'Reservations' dropdown in the navbar.
+        1. Click on 'Reserve a table'. 
+        1. You should be redirected to the table reservation form ('Book a Table' page).
+    * Result:
+        1. When clicked, 'Reserve a table' redirects to the table reservation form page as expected.
+
+* Check that when user clicks 'Logout' they are redirected to a confirmation page ('Are you sure you want to sign out?')
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged in.
+        1. Click on 'Logout'.
+        1. You should be redirected to the logout confirmation page. 
+    * Result:
+        1. When clicked, 'Logout' redirects to the logout confirmation page as expected.
+
+* Check that user is notified when they log in (with a Bootstrap alert). 
+    * Test:
+        1. Open the website in a browser.
+        1. If you are logged in, log out.
+        1. Click on 'Login'.
+        1. Enter your login details and click 'Sign In'.
+        1. You should see a 'Successfuly signed in as XXX.' message flash under the navbar for a few seconds. 
+    * Result:
+        1. Alert appears as expected.
+
+* Check that user is notified when they log out (with a Bootstrap alert).
+    * Test:
+        1. Open the website in a browser.
+        1. If you are logged out, log in.
+        1. Click on 'Logout'.
+        1. When asked 'Are you sure you want to sign out?', confirm your choice.
+        1. You should see a 'You have signed out.' message flash under the navbar for a few seconds. 
+    * Result:
+        1. Alert appears as expected.
+
+* Check that the 'Book a table' button in the Home page jumbotron redirects to a 'Sign in' page if user not logged in.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Click on the 'Book a table' button in the hero / jumbotron section of the 'Home' page. 
+        1. You should be redirected to the 'Sign In' page.
+    * Result:
+        1. When clicked, the 'Book a table' button redirects to the 'Sign In' page as expected.
+
+* Check that the 'Book a table' button in the Home page jumbotron redirects to a 'Book a table' page if user logged in.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged in.
+        1. Click on the 'Book a table' button in the hero / jumbotron section of the 'Home' page. 
+        1. You should be redirected to the table reservation form.
+    * Result:
+        1. When clicked, the 'Book a table' button redirects to the table reservation form as expected.
+
+* Check that unauthorised users cannot view 'My reservations'.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Try to access the 'My reservations' link directly, by typing it into the browser's address bar.
+        1. You should be redirected to the 'Sign In' page.
+    * Result:
+        1. As expected, 'My reservations' link fails to open and redirects to 'Sign In' page. 
+
+* Check that users cannot edit other users' reservations.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Try to access an 'Edit' link of a reservation created by a different user.
+        1. You should be redirected back to the page you came from and a 'You are not authorised to edit this reservation.' alert should appear under the navbar for a few seconds.
+    * Result:
+        1. As expected, user gets redirected to their previous destination and an alert is displayed. 
+
+* Check that users cannot delete other users' reservations.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Try to access a 'Delete' link of a reservation created by a different user.
+        1. You should be redirected back to the page you came from and a 'You are not authorised to delete this reservation.' alert should appear under the navbar for a few seconds.
+    * Result:
+        1. As expected, user gets redirected to their previous destination and an alert is displayed. 
+
+* Check that when a table reservation form is submitted, user is redirected to 'My reservations' and a 'Booking created successfuly' alert is displayed.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Go to 'Reserve a table' in the 'Reservations' dropdown. 
+        1. Fill in the form and 'Submit'.
+        1. You should be redirected to 'My reservations' and a 'Booking created successfuly' alert should appear under the navbar for a few seconds.
+    * Result:
+        1. As expected, user gets redirected to 'My reservations' and an alert is displayed.
+
+* Check that when a reservation is edited, user is redirected to 'My reservations' and a 'Your changes have been saved.' alert is displayed.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Go to 'My reservations' in the 'Reservations' dropdown. 
+        1. Click 'Edit' next to a chosen reservation. 
+        1. Edit some details and save changes.
+        1. You should be redirected to 'My reservations' and a 'Your changes have been saved.' alert should appear under the navbar for a few seconds.
+    * Result:
+        1. As expected, user gets redirected to 'My reservations' and an alert is displayed.
+
+* Check that an 'Are you sure you want to delete your booking?' page is displayed when a 'Delete' button is clicked on a booking.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Go to 'My reservations' in the 'Reservations' dropdown. 
+        1. Click 'Delete' next to a chosen reservation. 
+        1. You should be redirected to 'Are you sure you want to delete your booking?' page.
+    * Result:
+        1. As expected, user gets redirected to the deletion confirmation page.
+
+* Check that when a 'Confirm' button is clicked on an 'Are you sure you want to delete your booking?' page, user is redirected to 'My Reservations', a 'Booking deleted.' alert is displayed and the booking thy deleted is gone.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Go to 'My reservations' in the 'Reservations' dropdown. 
+        1. Click 'Delete' next to a chosen reservation. 
+        1. 'Are you sure you want to delete your booking?' Click 'Confirm'.
+        1. You should be redirected to 'My reservations' and see the 'Booking deleted.' alert.
+        1. The booking you deleted should be gone.
+    * Result:
+        1. As expected, user gets redirected to 'My reservations', sees the alert and the deleted booking is gone.
+
+* Check that when a 'No! Go Back' button is clicked on an 'Are you sure you want to delete your booking?' page, user is redirected to 'My Reservations' and all the bookings are still there (none have been deleted).
+    * Test:
+        1. Open the website in a browser.
+        1. Log in.
+        1. Go to 'My reservations' in the 'Reservations' dropdown. 
+        1. Click 'Delete' next to a chosen reservation. 
+        1. 'Are you sure you want to delete your booking?' Click 'No! Go Back'.
+        1. You should be redirected to 'My reservations' and have the same amount of bookings you had previously.
+    * Result:
+        1. As expected, user gets redirected to 'My reservations' and no bookings are deleted.
+
+* Check that the links to social media pages in the Footer work and open in new tabs.
+    * Test:
+        1. Open the website in a browser.
+        1. Click on all social media links (Facebook, Twitter, YouTube, Instagram) one by one to make sure that the links are in working order and that they all open in a separate tab.
+    * Result:
+        * All links are working and all of them open in separate / new tabs.
+
+* Check that the links included in the 'Gallery' and 'Menu' cards in the Home page work and redirect correctly to the 'Gallery' and 'Menu' pages.
+    * Test:
+        1. Open the website in a browser.
+        1. Scroll down the Home page to the cards section.
+        1. Click on the 'View Menu' button in the 'Menu' card to make sure that the link works and redirects to the 'Menu' page.
+        1. Then click on the 'View Gallery' button in the 'Gallery' card to make sure that the link works and redirects to the 'Gallery' page.        
+    * Result:
+        * All links are working and all of them redirect to correct pages.
+
+* Check validation of the reservation form.
+    * Test:
+        1. Open the website in a browser and navigate to the 'Reserve a table' page.
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
+    * Result: 
+        * The form cannot be submitted until each of the input fields has been filled in correctly so the validation is working.
+
+* Check that jumping between 'Soups', 'Mains' and 'Desserts' tabs on the 'Menu' page is flawless and that each tab displays correct item information. 
+    * Test:
+        1. Open the website in a browser.
+        1. Go to 'Menu' tab.
+        1. Click on 'Soups', 'Mains' and 'Desserts' in turn and check that there is no delay and the information within each tab is correct.
+    * Result:
+        1. The page and its tabs display flawlessly as expected.
+
+* Check that the photos in the 'Gallery' page display correctly.
+    * Test:
+        1. Open the website in a browser.
+        1. Go to 'Gallery' tab.
+        1. Make sure the photos display (links are working), they are in alignment and displayed in the same sizes.
+    * Result:
+        1. The page and it's images display flawlessly as expected.
+
+* Check that when the email address is clicked on the 'Contact' page, it opens up the user's mailing app with a new message.
+    * Test:
+        1. Open the website in a browser.
+        1. Go to 'Contact' tab.
+        1. Click on the actual email address. 
+        1. A click should open a new email in one's mailing app.
+    * Result:
+        1. Upon clicking on the email address, a mailing app was opened (in my case Outlook). This works as expected.
+
+* Check that when the phone number is clicked on the 'Contact' page, it opens up the user's phone app.
+    * Test:
+        1. Open the website in a browser.
+        1. Go to 'Contact' tab.
+        1. Click on the actual phone number. 
+        1. A click should open a window or app allowing the user to make a call.
+    * Result:
+        1. Upon clicking on the phone number, a phone app was opened (in my case Skype). This works as expected.
+
+* Check validation of the Register form.
+    * Test:
+        1. Open the website in a browser and make sure you are logged out.
+        1. Click 'Register'.
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty (apart from email field as it is optional). 
+    * Result: 
+        * The form cannot be submitted and account created until each of the input fields has been filled in correctly so the validation is working.
+
+* Check validation of the Login form.
+    * Test:
+        1. Open the website in a browser and make sure you are logged out.
+        1. Click 'Login'.
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
+    * Result: 
+        * The form cannot be submitted and user logged in until each of the input fields has been filled in correctly so the validation is working.
+
+### Automated testing
+
+All tests in tests.py were run successfuly.
+
+![Automated Test Result](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/auto_test.PNG)
+
+
+### Validator testing
+
+* HTML - when the code was passed through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html) 
+    * I have received a few errors referring to the validator not recognising jinja. To avoid this, I have taken the HTML code straight from each page by clicking on each navbar element in turn, right-clicking and choosing 'View page source' to get clean HTML. 
+    * Across all pages (inheriting from base.html): 'Error: Stray end tag div. From line 86, column 5; to line 86, column 10'. After checking the code in my repository I did not find this to be true as all the tags were present. I believe there was a glitch in the code taken from 'View page source' (possibly due to jinja not displaying there). There is actually no problem with the code.
+
+    ![Error](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/html-error.PNG) 
+
+    * In contact.html: 'Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead.' I have fixed this by moving the 'width' attribute from the 'iframe' tag in the template to style.css.    
+    
+* CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+
+    ![CSS](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/css-validator.PNG)
+
+
+* JavaScript - when running the code through [JSHint linter](https://jshint.com/) I received the following error message referring to the two 'let' variables: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". I copied /*jshint esversion: 6 */ into the linter window to override this. I have also used /*globals bootstrap */ to stop JSHint from treating 'bootstrap' in let alert = new bootstrap.Alert(messages) as an undefined variable. After I did this, no more errors appeared.
+
+    ![jShint](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/jshint.PNG)
+
+
+* Python - when running the code through [PEP8 linter](http://pep8online.com/) I received a few 'line too long' errors referring to the automatically generated code in settings.py. As the code was auto-generated and there was not an easy fix to shorten the lines, I have left this error in. There were no errors in any other files that have been coded and customised by me.  
+
+
+* Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I have encountered the following errors and/or warnings:
+    * I skipped a heading level on the menu.html page (I used h1 and h3, leaving out h2). I fixed this by changing the h3 elements to h2. No further errors have been found after I applied this fix and passed the site through the validator again. 
+    * There was not enough contrast between the navbar background and the font of its elements. I have corrected this by changing the basic background color of 'red' to a slightly deeper #d40b0b. 
+    * Aria-labels in the Gallery page were missing. I have added them to all images. 
+    * No further errors have been found after I applied the above fixes and passed the site through the validator again.
+    
+    ![Wave](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wave.PNG)
+
+### Unfixed bugs
+
+No other bugs found.
+
+## Deployment
+
+The below steps were followed to deploy this project to Heroku:
+1. Go to [Heroku](https://dashboard.heroku.com/apps) and click 'New' to create a new app.
+2. After choosing the app name and setting the region, press 'Create app'.
+3. Go to 'Resources' to add a database and scroll down to 'Add-ons'. Search for 'Postgres' and choose 'Heroku Postgres' from available options.
+4. Go to 'Settings' and navigate to 'Config Vars'. As the Postgres database has been connected, the DATABASE_URL is already there. Add the remaining config vars: CLOUDINARY_URL, SECRET_KEY, (the values for these variables depend on your own personal set up and will not be added here for security reasons). 
+5. Leave 'Settings' and go to 'Deploy'. Scroll down and set 'Deployment Method' to GitHub. Once GitHub is chosen, find your repository and connect it to Heroku.
+6. Scroll down to Manual Deploy, make sure the 'main' branch is selected and click 'Deploy Branch'.
+7. The deployed app can be found [here](https://taste-of-poland.herokuapp.com/).
+
+## Credits
+
+### Content 
+
+All the general 'blurb' across the website has been written by me, apart from the names and descriptions of the dishes in the Menu. These have been taken and adapted from [StayPoland](https://www.staypoland.com/poland/polish-food/).
+
+### Media 
+
+All photos/images have been taken from [ShutterStock](https://www.shutterstock.com/.)
+
+### Code
+
+I have used this code snippet from [Bootdey](https://www.bootdey.com/snippets/view/bs4-Food-Menu) to create the Menu page.
+I have used a code snippet from [CSS Tricks](https://css-tricks.com/perfect-full-page-background-image/) to add the background Home page image.
+
+### Acknowledgements
+
+As always, I'd like to thank my mentor Daisy McGirr for her guidance and priceless advice throughout this project. 
