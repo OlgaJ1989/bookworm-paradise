@@ -65,49 +65,54 @@ The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
       ![Book details](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/book-detail.PNG) 
 
 * Book detail page - review section
-    * At the bottom of each book's detail page, users can find a section where they can read existing reviews or add their own. Users need to be logged in to leave reviews which they can then edit or delete. They will only see a review Once a user selects a book and clicks on its cover, they will be taken to the book's detail page containing all the information about it, such as price, description, number of pages, etc. If a user is an admin / shop owner, they will also be able to edit or delete a book on this page, using the 'Edit' and 'Delete' buttons located above the price. 
+    * At the bottom of each book's detail page, users can find a section where they can read existing reviews or add their own. All users can view existing reviews but only logged in users can add them. When it comes to editing or deleting an existing review, only the review's author can do this. A user will see the an 'Edit' and 'Delete' buttons under a review only if they are the review's author.
     
-      ![Book details](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/book-detail.PNG) 
+      ![Reviews](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/reviews.JPG) 
 
 * Contact page
-    * The contact.html page consists of restaurant contact info (phone, address, email) and an embedded Google map with the location. 
+    * The contact.html page consists of a contact form through which a user can ask the shop owner a question. When submitted, the form creates a message instance in the database so the owner can access it and contact the user. 
     
-      ![Contact](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![Contact](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/contact-form.PNG)
 
-* Reservation / booking page
-    * The 'Book' tab links with a page that consists of a reservation / booking form which allows the user to book a table for a chosen date and time up to a day before and for up to 6 guests.  
+* Cart page
+    * When a user chooses a book and clicks on the 'Cart' link, they will be redirected to the Cart page where they will be able to see the info for the product they've chosen.  
     
-      ![Reservation](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![Cart](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/cart.PNG)
 
-* My Bookings page
-    * The 'My Bookings' tab display all the bookings that the user has made. It only shows bookings made by the person who is currently logged in. From here the user can edit and delete existing bookings.      
+* Checkout page
+    * If they decide they are happy with their choice, they can then click on the 'Checkout' button which will in turn take them to the page where they can fill in their personal info and card details to pay for the book.
     
-      ![Bookings](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![Checkout](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/checkout.PNG)
 
-* Deletion confirmation page
-    * A template that renders after the user chooses to delete a booking, giving them a chance to confirm their choice or go back to safety.      
-    
-      ![Delete](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+* Checkout success page
+    * Once the user places their order, they will be greeted with a checkout success page, showing them their order details. 
+        
+      ![Success](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/thank-you.PNG)
+
+* Sign Up page
+    * Allows the user to register for an account so they can save their details and order history.
+        
+      ![Sign Up](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/sign-up.PNG)
 
 * Sign In / Login page
-    * Allows the user to log in to an existing account in order to book a table and view existing bookings. It also provides the user with the link to register.      
-    
-      ![Sign In](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+    * Allows the user to log in to an existing account in order to manage reviews and view their order history.
+        
+      ![Sign In](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/login.PNG)
 
 * Sign out / Logout confirmation page
     * A template that renders after the user chooses to log out, giving them a chance to confirm in case they clicked the link by mistake.       
     
-      ![Sign Out](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![Sign Out](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/logout.PNG)
 
-*  404 page
-    * A custom 404 page has been made to make it easy for the user to come back to the game page after they tried to move to a non-existent page.
+*  Custom 404 page
+    * A custom 404 page has been made to make it easy for the user to come back to home page after they tried to move to a non-existent page.
 
-      ![404](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![404](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/404.PNG)
 
 * A favicon
     * A favicon has been added to make it easier for users to find the Taste of Poland page if multiple tabs are open. 
     
-      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/landing-page.PNG)
+      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/favicon.PNG)
 
 ### Features left to implement
 
