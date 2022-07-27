@@ -313,7 +313,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
 
 ### Entity Relationship Diagram
 
-TO UPDATE ![ERD](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/erd.PNG)
+![ERD](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/erd.PNG)
 
 ### Wireframes
 
