@@ -28,6 +28,12 @@
                 <a href="{% url 'books' %}?genre=romance" class="dropdown-item">Romance</a>
                 <a href="{% url 'books' %}?genre=science_fiction" class="dropdown-item">Science-Fiction</a>
         </li>
+        <li class="nav-item mr-2">
+            <a class="nav-link" href="#link-to-newsletter">Newsletter</a>
+        </li>
+        <li class="nav-item mr-2">
+            <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+        </li>
     </ul>
     <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
