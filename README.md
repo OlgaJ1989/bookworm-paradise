@@ -319,51 +319,33 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
 
 * Home
 
-    ![WireframeHome](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_home.PNG)
+    ![WireframeHome](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe1.PNG)
 
-* Menu
+* All Books
 
-    ![WireframeMenu](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_menu.PNG)
+    ![WireframeBooks](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe2.PNG)
 
-* Gallery
+* Book details
 
-    ![WireframeGallery](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_gallery.PNG)
-
-* Book a table
-
-    ![WireframeReserve](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_booking_form.PNG)
-
-* Existing reservations
-
-    ![WireframeReservations](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_reservations.PNG)
+    ![WireframeDetails](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe3.PNG)
 
 * Contact Us
 
-    ![WireframeContact](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_contact.PNG)
-
-* Register
-
-    ![WireframeRegister](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_register.PNG)
-
-* Login
-
-    ![WireframeLogin](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe_login.PNG)
+    ![WireframeContact](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe4.PNG)
 
 
 ## Technologies
 
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) has been used to structure the website.
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) has been used to style the website.
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to tweak the settings of login / logout notifications / messages.
-* [Python](https://www.python.org/) was used as the main language in which this project was coded.
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [Python](https://www.python.org/)
 * [Django](https://www.djangoproject.com/) was the framework used to build this website.
 * [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) was used to create and style the front end of the website.
-* [Font Awesome](https://fontawesome.com/) icons have been used for the social media links in the Footer and on the Contact page.    
-* [Google Fonts](https://fonts.google.com/) have been used to import Tangerine and Roboto Slab fonts. 
+* [Font Awesome](https://fontawesome.com/) icons have been used for the social media links in the Footer and links in the navbar.     
+* [Google Fonts](https://fonts.google.com/) have been used to import fonts. 
 * [Favicon](https://favicon.io/) was used to create the favicon for the website.
 * [Techsini](http://techsini.com/multi-mockup/index.php) mockup generator was used to create the mockup image for the README.md file. 
 * [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) were used to inspect elements of the website and test different styles. 
-* [GitHub](https://github.com/) has been used to store the code, images, and other contents of the website. 
+* [GitHub](https://github.com/) has been used to store the code, images, and other contents of the website.
+* [AWS](https://aws.amazon.com/) was used to store static and media files in deployed stage. 
 * [Heroku](https://dashboard.heroku.com/apps) was used to deploy the game to the web.
 * [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
@@ -382,7 +364,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
         1. Grab and drag the responsive window slowly down to 300px and then back again, checking that everything is displayed correctly in each size / breakpoint.
     * Result:
         * All elements are responsive and display correctly in each of the browsers and each of the window sizes.
-        * Additionally, I also had a chance to check the responsiveness on several 'real' devices, such as Samsung Galaxy S8, Samsung Galaxy A42, Xiaomi POCO X Pro, iPhone X, iPhone 13 Pro, Samsung Galaxy Tab A. All elements are responsive and display correctly on each of these devices.
+        * Additionally, I also had a chance to check the responsiveness on several 'real' devices, such as Samsung Galaxy S8, Xiaomi 11T, Xiaomi POCO X Pro, Huawei P20, Samsung Galaxy Tab A. All elements are responsive and display correctly on each of these devices.
 
 * Check that the links in the navigation bar navigate to the correct pages. 
     * Test:
@@ -391,34 +373,97 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Result:
         * All links working and directing users to the correct pages.
 
-* Check that the 'My reservations' tab in the 'Reservations' dropdown appears only if a user is signed in.
+* Check that the 'Profile' tab in the 'Account' dropdown appears only if a user is signed in.
     * Test:
         1. Open the website in a browser.
         1. Make sure you are logged out.
-        1. Click on the 'Reservations' dropdown in the navbar.
-        1. You should only see the 'Reserve my table' link / tab.
+        1. Click on the 'Account' dropdown in the navbar.
+        1. You should only see the 'Register' and 'Login' links.
     * Result:
-        1. When clicked, the 'Reservations' dropdown display only the 'Reserve my table' link / tab as expected. 
+        1. When clicked, the 'Account' dropdown displays only the 'Register' and 'Login' links. 
 
-* Check that the 'Reserve a table' tab in the 'Reservations' dropdown redirects to the 'Login' page if a user is signed out.
+* Check that the 'Management' tab in the 'Account' dropdown appears only if a user is a superuser / admin.
     * Test:
         1. Open the website in a browser.
         1. Make sure you are logged out.
-        1. Click on the 'Reservations' dropdown in the navbar.
-        1. Click on 'Reserve a table'. 
-        1. You should be redirected to the 'Sign In' page.
+        1. Click on the 'Account' dropdown in the navbar.
+        1. You should only see the 'Register' and 'Login' links.
+        1. Log in with an admin account and check again - you should see 'Management' link now.
+        1. Log out and log in with a generic user account (not admin) - you should see 'Profile' and 'Logout' but NOT 'Management'.
     * Result:
-        1. When clicked, the 'Reserve a table' button redirects to the 'Sign In' page as expected.  
+        1. When logged out, the 'Account' dropdown displays only the 'Register' and 'Login' links.
+        1. When logged in as admin, the 'Account' dropdown displays only the 'Profile', 'Logout' and 'Management'.
+        1. When logged in as a generic, non-admin user, the 'Account' dropdown displays only the 'Profile' and 'Logout' links.
 
-* Check that the 'Reserve a table' tab in the 'Reservations' dropdown displays a table reservation form if a user is signed in.
+* Check that when an email is submitted in the Newsletter section, it gets saved in MailChimp.
     * Test:
         1. Open the website in a browser.
-        1. Make sure you are logged in.
-        1. Click on the 'Reservations' dropdown in the navbar.
-        1. Click on 'Reserve a table'. 
-        1. You should be redirected to the table reservation form ('Book a Table' page).
+        1. Navigate to the home page Newsletter section.
+        1. Input an email and click 'Submit'.
+        1. Log in to MailChimp and navigate to Audience > All Contacts and check whether the email appeared there.
     * Result:
-        1. When clicked, 'Reserve a table' redirects to the table reservation form page as expected.
+        1. When email is provided and 'Subscribe' button clicked, one receives a confirmation message ('Thank you for subscribing').
+        1. When we then navigate to MailChimp, > Audience > All contacts, the email appears there.
+        
+* Check that the 'Leave a review' section in ech book's detail page displays a review form if a user is logged in and a 'Log in' button if a user is logged out. No logged out users should be able to leave a review.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Navigate to any book's detail page and scroll down to 'Leave a review' section. You should be able to see only the 'Log in' button'.
+        1. Log in and navigate to the book's detail page again. You should be able to see the review form now.
+    * Result:
+        1. If a user is logged in, they see the review form.
+        1. If a user is not logged in, they see a 'Log in' button.
+
+* Check that the 'Log in' button in 'Leave a review' section navigates to the login page.
+    * Test:
+        1. Open the website in a browser.
+        1. Make sure you are logged out.
+        1. Navigate to any book's detail page and scroll down to 'Leave a review' section. Click on the 'Log in' button'.
+        1. You should be taken to the login page.
+    * Result:
+        1. When clicked, the 'Log In' button correctly redirects to the login page.
+
+* Check that when 'Submit review' button is clicked, the review is submitted and appears in the existing reviews section to the left of the form.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in and navigate to a book.
+        1. Write something in the review section and click 'Submit'.
+    * Result:
+        1. The review is submitted correctly and appear in the existing reviews section.
+
+* Check that only review's author can see edit and delete buttons on their reviews and that they cannot see these buttons on reviews left by someone else.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in and navigate to a book.
+        1. Leave a review.
+        1. You should see edit and delete buttons next to your review. 
+        1. Log out and log in as a different user. 
+        1. Navigate to the same book and leave a review. 
+        1. Once your review appears, you should see edit and delete buttons on your review, but not on the review left by someone else.
+    * Result:
+        1. The review is submitted correctly and user can see edit and delete buttons only on reviews created by them.
+
+* Check that when 'Edit' button is clicked on a review, it redirects to a prefilled form where the review can be edited and that when 'Save changes' button is clicked, it redirects to the book's detail page and the changes made to the review are reflected. 
+    * Test:
+        1. Open the website in a browser.
+        1. Log in and navigate to a book.
+        1. Leave a review.
+        1. Click 'Edit' and make some changes.
+        1. Click on 'Save changes'.
+        1. Check that the changes have been saved reflected on your review.
+    * Result:
+        1. When 'Edit' button is clicked, we are taken to an 'Edit review' page.
+        1. When we make and save changes, the page navigates back to the book detail page and our changes can be seen. 
+
+* Check that when 'Delete' button is clicked on a review, the review disappeares and a deletion confirmation message appears.
+    * Test:
+        1. Open the website in a browser.
+        1. Log in and navigate to a book.
+        1. Leave a review.
+        1. Click 'Delete'.
+    * Result:
+        1. When 'Delete' button is clicked, the review disappears and we get notified of the deletion.
 
 * Check that when user clicks 'Logout' they are redirected to a confirmation page ('Are you sure you want to sign out?')
     * Test:
@@ -429,23 +474,23 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Result:
         1. When clicked, 'Logout' redirects to the logout confirmation page as expected.
 
-* Check that user is notified when they log in (with a Bootstrap alert). 
+* Check that user is notified when they log in. 
     * Test:
         1. Open the website in a browser.
         1. If you are logged in, log out.
         1. Click on 'Login'.
         1. Enter your login details and click 'Sign In'.
-        1. You should see a 'Successfuly signed in as XXX.' message flash under the navbar for a few seconds. 
+        1. You should see a 'Successfuly signed in as XXX.' message appear in the top right hand corner. 
     * Result:
         1. Alert appears as expected.
 
-* Check that user is notified when they log out (with a Bootstrap alert).
+* Check that user is notified when they log out.
     * Test:
         1. Open the website in a browser.
         1. If you are logged out, log in.
         1. Click on 'Logout'.
         1. When asked 'Are you sure you want to sign out?', confirm your choice.
-        1. You should see a 'You have signed out.' message flash under the navbar for a few seconds. 
+        1. You should see a 'You have signed out.' message appear in the top right hand corner. 
     * Result:
         1. Alert appears as expected.
 
@@ -458,96 +503,41 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Result:
         1. When clicked, the 'Book a table' button redirects to the 'Sign In' page as expected.
 
-* Check that the 'Book a table' button in the Home page jumbotron redirects to a 'Book a table' page if user logged in.
+* Check that the 'Shop Now' button in the Home page jumbotron redirects to the 'All Books' [age. 
     * Test:
         1. Open the website in a browser.
-        1. Make sure you are logged in.
-        1. Click on the 'Book a table' button in the hero / jumbotron section of the 'Home' page. 
-        1. You should be redirected to the table reservation form.
+        1. Click on the 'Shop Now' button in the hero / jumbotron section of the 'Home' page. 
+        1. You should be redirected to the 'All Books' page.
     * Result:
-        1. When clicked, the 'Book a table' button redirects to the table reservation form as expected.
+        1. When clicked, the 'Shop Now' button redirects to the 'All Books' page as expected.
 
-* Check that unauthorised users cannot view 'My reservations'.
+* Check that unauthorised users cannot view the 'Profile' page.
     * Test:
         1. Open the website in a browser.
-        1. Make sure you are logged out.
-        1. Try to access the 'My reservations' link directly, by typing it into the browser's address bar.
+        1. Try to access the 'Profile' link directly, by typing it into the browser's address bar.
         1. You should be redirected to the 'Sign In' page.
     * Result:
-        1. As expected, 'My reservations' link fails to open and redirects to 'Sign In' page. 
+        1. As expected, 'Profile' link fails to open and redirects to 'Sign In' page. 
 
-* Check that users cannot edit other users' reservations.
+* Check that 'Edit' and 'Delete' buttons appear in book detail page only for superusers (admins).
     * Test:
         1. Open the website in a browser.
-        1. Log in.
-        1. Try to access an 'Edit' link of a reservation created by a different user.
-        1. You should be redirected back to the page you came from and a 'You are not authorised to edit this reservation.' alert should appear under the navbar for a few seconds.
+        1. Log in as a superuser.
+        1. Navigate to 'All Books' and you should see 'Edit' and 'Delete' buttons under each book's details.
+        1. Click on a random book to see its details and you should see 'Edit' and 'Delete' buttons under the book's title section.
+        1. Log out and log in as a non-admin user. Navigate again to the above pages - you should not see the edit and delete buttons.
+        1. Log out and don't log in as anyone. Navigate again to the above pages - you should not see the edit and delete buttons.
     * Result:
-        1. As expected, user gets redirected to their previous destination and an alert is displayed. 
-
-* Check that users cannot delete other users' reservations.
+        1. As expected, only a user with superuser rights can see the edit and delete buttons on the above pages.
+        
+* Check that user can easily change the quantity of book they would like to purchase on the book's detail page. 
     * Test:
         1. Open the website in a browser.
-        1. Log in.
-        1. Try to access a 'Delete' link of a reservation created by a different user.
-        1. You should be redirected back to the page you came from and a 'You are not authorised to delete this reservation.' alert should appear under the navbar for a few seconds.
+        1. Select a book.
+        1. Try changing the quantity with the use of arrows or by deleting the number manually and typing the new number in.
     * Result:
-        1. As expected, user gets redirected to their previous destination and an alert is displayed. 
-
-* Check that when a table reservation form is submitted, user is redirected to 'My reservations' and a 'Booking created successfuly' alert is displayed.
-    * Test:
-        1. Open the website in a browser.
-        1. Log in.
-        1. Go to 'Reserve a table' in the 'Reservations' dropdown. 
-        1. Fill in the form and 'Submit'.
-        1. You should be redirected to 'My reservations' and a 'Booking created successfuly' alert should appear under the navbar for a few seconds.
-    * Result:
-        1. As expected, user gets redirected to 'My reservations' and an alert is displayed.
-
-* Check that when a reservation is edited, user is redirected to 'My reservations' and a 'Your changes have been saved.' alert is displayed.
-    * Test:
-        1. Open the website in a browser.
-        1. Log in.
-        1. Go to 'My reservations' in the 'Reservations' dropdown. 
-        1. Click 'Edit' next to a chosen reservation. 
-        1. Edit some details and save changes.
-        1. You should be redirected to 'My reservations' and a 'Your changes have been saved.' alert should appear under the navbar for a few seconds.
-    * Result:
-        1. As expected, user gets redirected to 'My reservations' and an alert is displayed.
-
-* Check that an 'Are you sure you want to delete your booking?' page is displayed when a 'Delete' button is clicked on a booking.
-    * Test:
-        1. Open the website in a browser.
-        1. Log in.
-        1. Go to 'My reservations' in the 'Reservations' dropdown. 
-        1. Click 'Delete' next to a chosen reservation. 
-        1. You should be redirected to 'Are you sure you want to delete your booking?' page.
-    * Result:
-        1. As expected, user gets redirected to the deletion confirmation page.
-
-* Check that when a 'Confirm' button is clicked on an 'Are you sure you want to delete your booking?' page, user is redirected to 'My Reservations', a 'Booking deleted.' alert is displayed and the booking thy deleted is gone.
-    * Test:
-        1. Open the website in a browser.
-        1. Log in.
-        1. Go to 'My reservations' in the 'Reservations' dropdown. 
-        1. Click 'Delete' next to a chosen reservation. 
-        1. 'Are you sure you want to delete your booking?' Click 'Confirm'.
-        1. You should be redirected to 'My reservations' and see the 'Booking deleted.' alert.
-        1. The booking you deleted should be gone.
-    * Result:
-        1. As expected, user gets redirected to 'My reservations', sees the alert and the deleted booking is gone.
-
-* Check that when a 'No! Go Back' button is clicked on an 'Are you sure you want to delete your booking?' page, user is redirected to 'My Reservations' and all the bookings are still there (none have been deleted).
-    * Test:
-        1. Open the website in a browser.
-        1. Log in.
-        1. Go to 'My reservations' in the 'Reservations' dropdown. 
-        1. Click 'Delete' next to a chosen reservation. 
-        1. 'Are you sure you want to delete your booking?' Click 'No! Go Back'.
-        1. You should be redirected to 'My reservations' and have the same amount of bookings you had previously.
-    * Result:
-        1. As expected, user gets redirected to 'My reservations' and no bookings are deleted.
-
+        1. As expected, user is able to toggle the quantity of books or override the number manually.
+        
 * Check that the links to social media pages in the Footer work and open in new tabs.
     * Test:
         1. Open the website in a browser.
@@ -555,61 +545,25 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Result:
         * All links are working and all of them open in separate / new tabs.
 
-* Check that the links included in the 'Gallery' and 'Menu' cards in the Home page work and redirect correctly to the 'Gallery' and 'Menu' pages.
+* Check validation of 'Contact Us' form.
     * Test:
-        1. Open the website in a browser.
-        1. Scroll down the Home page to the cards section.
-        1. Click on the 'View Menu' button in the 'Menu' card to make sure that the link works and redirects to the 'Menu' page.
-        1. Then click on the 'View Gallery' button in the 'Gallery' card to make sure that the link works and redirects to the 'Gallery' page.        
-    * Result:
-        * All links are working and all of them redirect to correct pages.
-
-* Check validation of the reservation form.
-    * Test:
-        1. Open the website in a browser and navigate to the 'Reserve a table' page.
+        1. Open the website in a browser and navigate to the 'Contact Us' page.
         1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
     * Result: 
         * The form cannot be submitted until each of the input fields has been filled in correctly so the validation is working.
 
-* Check that jumping between 'Soups', 'Mains' and 'Desserts' tabs on the 'Menu' page is flawless and that each tab displays correct item information. 
+* Check validation of 'Review' form.
     * Test:
-        1. Open the website in a browser.
-        1. Go to 'Menu' tab.
-        1. Click on 'Soups', 'Mains' and 'Desserts' in turn and check that there is no delay and the information within each tab is correct.
-    * Result:
-        1. The page and its tabs display flawlessly as expected.
-
-* Check that the photos in the 'Gallery' page display correctly.
-    * Test:
-        1. Open the website in a browser.
-        1. Go to 'Gallery' tab.
-        1. Make sure the photos display (links are working), they are in alignment and displayed in the same sizes.
-    * Result:
-        1. The page and it's images display flawlessly as expected.
-
-* Check that when the email address is clicked on the 'Contact' page, it opens up the user's mailing app with a new message.
-    * Test:
-        1. Open the website in a browser.
-        1. Go to 'Contact' tab.
-        1. Click on the actual email address. 
-        1. A click should open a new email in one's mailing app.
-    * Result:
-        1. Upon clicking on the email address, a mailing app was opened (in my case Outlook). This works as expected.
-
-* Check that when the phone number is clicked on the 'Contact' page, it opens up the user's phone app.
-    * Test:
-        1. Open the website in a browser.
-        1. Go to 'Contact' tab.
-        1. Click on the actual phone number. 
-        1. A click should open a window or app allowing the user to make a call.
-    * Result:
-        1. Upon clicking on the phone number, a phone app was opened (in my case Skype). This works as expected.
+        1. Open the website in a browser and navigate to a book's review section.
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
+    * Result: 
+        * The form cannot be submitted until each of the input fields has been filled in correctly so the validation is working.
 
 * Check validation of the Register form.
     * Test:
         1. Open the website in a browser and make sure you are logged out.
         1. Click 'Register'.
-        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty (apart from email field as it is optional). 
+        1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
     * Result: 
         * The form cannot be submitted and account created until each of the input fields has been filled in correctly so the validation is working.
 
@@ -620,6 +574,8 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
         1. Fill in the form leaving different input areas empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
     * Result: 
         * The form cannot be submitted and user logged in until each of the input fields has been filled in correctly so the validation is working.
+
+
 
 ### Automated testing
 
