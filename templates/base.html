@@ -50,14 +50,14 @@
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link" href="#" id="navbarDrop" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             <div class="text-center nav-font">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <h2 class="my-0">Account</h2>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" id="main-menu-link" aria-label="navbar-dropdown">
+                        <div class="dropdown-menu border-0" id="main-menu-link">
                             {% if user.is_authenticated %}
                             {% if user.is_superuser %}
                             <a href="{% url 'add_book' %}" class="dropdown-item">Management</a>
