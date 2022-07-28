@@ -653,9 +653,9 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
         
 ### Automated testing
 
-All tests in tests.py were run successfuly.
+All tests in tests.py files were run successfuly.
 
-![Automated Test Result](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/auto_test.PNG)
+![Automated Test Result](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/auto_testing.PNG)
 
 
 ### Validator testing
