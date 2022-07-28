@@ -319,19 +319,19 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
 
 * Home
 
-    ![WireframeHome](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe1.PNG)
+    ![WireframeHome](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/wireframe1.PNG)
 
 * All Books
 
-    ![WireframeBooks](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe2.PNG)
+    ![WireframeBooks](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/wireframe2.PNG)
 
 * Book details
 
-    ![WireframeDetails](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe3.PNG)
+    ![WireframeDetails](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/wireframe3.PNG)
 
 * Contact Us
 
-    ![WireframeContact](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wireframe4.PNG)
+    ![WireframeContact](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/wireframe4.PNG)
 
 
 ## Technologies
