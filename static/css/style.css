@@ -246,6 +246,10 @@ footer {
     border-width: 2px !important;
 }
 
+.asterisk {
+    color: #7C3F5A !important;
+}
+
 /* books.html (Products page) */
 
 .card {
