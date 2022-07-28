@@ -30,7 +30,7 @@ The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
 
         5. On smaller devices the menu links scale down to a toggler, allowing for a cleaner design.
 
-           ![Navigation Responsive](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/mobile-nav.PNG)
+           ![Navigation Responsive](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/mobile-nav-shots.PNG)
       
 * Landing page image with overlaying jumbotron
     * The index.html page (Home) includes a background picture of books, with a button leading directly toe the shop where users can view all available books. 
