@@ -655,7 +655,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
 
 All tests in tests.py files were run successfuly.
 
-![Automated Test Result](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/auto_testing.PNG)
+![AutoTest](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/auto-testing.PNG)
 
 
 ### Validator testing
