@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12 my-auto text-center">
             <section class="jumbotron rounded text-center">
-                <h2>Pick up your next read!</h1>
+                <h2>Pick up your next read!</h2>
                     <hr class="rounded my-4">
                     <a href="{% url 'books' %}" class="btn shop-now-btn">Shop Now</a>
             </section>
@@ -70,8 +70,8 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- Mail Chimp -->
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-<script type='text/javascript'>
+<script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script>
     (function ($) {
         window.fnames = new Array();
         window.ftypes = new Array();
