@@ -1,11 +1,14 @@
+<!-- Main nav -->
 <div class="collapse navbar-collapse" id="navbarToggler">
     <ul class="navbar-nav w-auto mr-auto">
         <li class="active nav-item mr-2">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item mr-2 dropdown">
+            <!-- All Books -->
             <a class="nav-link" href="#" id="all-books" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">All Books</a>
+                <!-- All Books sorting -->
             <div class="dropdown-menu" aria-labelledby="all-books">
                 <a href="{% url 'books' %}?sort=title&direction=asc" class="dropdown-item">By Title</a>
                 <a href="{% url 'books' %}?sort=author&direction=asc" class="dropdown-item ">By Author</a>
@@ -17,6 +20,7 @@
             </div>
         </li>
         <li class="nav-item mr-2 dropdown">
+            <!-- Books by genre -->
             <a class="nav-link" href="#" id="genres" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">Genres</a>
             <div class="dropdown-menu" aria-labelledby="genres">
@@ -30,14 +34,17 @@
             </div>
         </li>
         <li class="nav-item mr-2">
+            <!-- Newsletter -->
             <a class="nav-link" href="{% url 'home' %}#link-to-newsletter">Newsletter</a>
         </li>
         <li class="nav-item mr-2">
+            <!-- Contact us -->
             <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
         </li>
     </ul>
     <form method="GET" action="{% url 'books' %}">
         <div class="input-group w-100 d-none d-lg-flex">
+            <!-- Search bar -->
             <label for="search-bar" class="visually-hidden" style="color:white">Search here</label>
             <input class="form-control border rounded-left search-placeholder" id="search-bar" type="text" name="q"
                 placeholder="Search all books">

@@ -319,6 +319,13 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
         - A Django built in admin panel will be utilised to create a page where staff authorised as Django 'superusers' can view the existing orders, as well as modify and delete them if necessary.
 
 
+### Business model
+
+* Bookworm Paradise is based on a B2C (Business to Consumer) as it sells its books directly to the customer.
+* As this is the case, it needs to maintain good relationship with its customers in order to build a customer base and thrive.
+* A Facebook page has been created as it allows the shop owners to reach a wide range of customers and communicate with them regularly. 
+
+
 ### Entity Relationship Diagram
 
 ![ERD](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/erd.PNG)

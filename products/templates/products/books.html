@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="container-fluid mt-5">
+    <!-- Page displaying all books -->
     <div class="row">
         <div class="book-container col-10 offset-1">
             <div class="row mt-1 mb-2">
@@ -11,6 +12,7 @@
                     <div class="sort-select-wrapper w-50">
                         <select id="sort-selector" class="sort-box custom-select custom-select-sm border-rounded"
                             aria-label="Sort by">
+                            <!-- Sort books by... -->
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                             </option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price
@@ -37,6 +39,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 order-md-first" id="book-number-container">
+                    <!-- Quantity of books in shop -->
                     <p class="mt-3 text-center text-md-left">
                         {% if search_term or current_books or current_sorting != 'None_None' %}
                         <span><a href="{% url 'books' %}" style="text-decoration: none; color: #7C3F5A;">Back to All
@@ -50,6 +53,7 @@
             <div class="row">
                 {% for book in books %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
+                    <!-- Cards containing book info -->
                     <div class="card h-100">
                         {% if book.image %}
                         <a href="{% url 'book_details' book.id %}">
@@ -105,6 +109,7 @@
 </div>
 {% endblock %}
 
+<!-- JS for sorting functionality -->
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
