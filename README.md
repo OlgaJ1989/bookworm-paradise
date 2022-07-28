@@ -575,8 +575,82 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
     * Result: 
         * The form cannot be submitted and user logged in until each of the input fields has been filled in correctly so the validation is working.
 
+* Check that user can easily change the quantity of book they have in the cart. 
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Try changing the quantity with the use of arrows or by deleting the number manually and typing the new number in. 
+        1. Click 'Update' to update the cart.
+    * Result:
+        1. As expected, user is able to toggle the quantity of books or override the number manually.
+        1. When 'Update' is clicked, changes to the quantity and price are reflected.
 
+* Check that user can delete a book from cart. 
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click 'Delete' under the quantity selection box - the book should disappear from cart.
+    * Result:
+        1. As expected, when 'Delete' is clicked, book disappears from cart.
+        
+* Check that 'Keep shopping' button on 'Cart' page redirects back to 'All Books' page.
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click the 'Keep shopping' button.
+    * Result:
+        1. As expected, user is redirected to 'All Books' page when 'Keep shopping' button is clicked. 
 
+* Check that 'Checkout' button on 'Cart' page redirects to 'Checkout' page.
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click the 'Checkout' button.
+    * Result:
+        1. As expected, user is redirected to 'Checkout' page when 'Keep shopping' button is clicked. 
+
+* Check validation of the Checkout form (including card details section).
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click the 'Checkout' button.
+        1. Fill in the form leaving different required fields empty each time to make sure there is a warning message displayed each time you leave any of the fields empty. 
+    * Result: 
+        * The form cannot be submitted and order placed until each of the required input fields has been filled in correctly so the validation is working.
+
+* Check that when all details are filled in correctly and 'Place order' is clicked, order is placed successfully and user is redirected to checkout success page.
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click the 'Checkout' button.
+        1. Fill in the form with correct information and click 'Place order'. 
+    * Result: 
+        * As expected, order is placed successfully and user is redirected to checkout success page.
+        
+* Check that checkout success correctly displays order details.
+    * Test:
+        1. Open the website in a browser.
+        1. Select a book and add it to cart.
+        1. Navigate to 'Cart'.
+        1. Click the 'Checkout' button.
+        1. Fill in the form with correct information and click 'Place order'. 
+        1. See your order details on the checkout success page. 
+    * Result: 
+        * As expected, checkout success page is correctly displaying the order information.
+        
+* Check that the 'Profile' page displays order history. 
+    * Test:
+        1. Open the website in a browser.
+        1. Log in and navigate to 'Profile'.
+    * Result: 
+        * As expected, user can see their order history on the 'Profile' page. 
+        
 ### Automated testing
 
 All tests in tests.py were run successfuly.

@@ -517,7 +517,11 @@ input[type='submit']:focus {
     color: white;
 }
 
-.form-control {
+.form-control:focus[id='q-input'] {
+    color: white;
+}
+
+.form-control:focus[id='search-bar'] {
     color: white;
 }
 
