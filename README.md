@@ -118,9 +118,9 @@ The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
     * A business page has been created for marketing reasons, to further advertise the shop, post news and communicate with customers.  favicon has been added to make it easier for users to find the Taste of Poland page if multiple tabs are open.
     * The page can be accessed [here](https://www.facebook.com/Bookworm-Paradise-106344228834492/?notif_id=1658868269617980&notif_t=page_invite_accept&ref=notif).  
     
-      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb1.PNG)
+      ![Facebook 1](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb1.JPG)
 
-      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb2.PNG)
+      ![Facebook 2](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb2.JPG)
 
 
 ## User Experience Design
