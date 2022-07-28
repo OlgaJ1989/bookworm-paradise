@@ -114,6 +114,14 @@ The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
     
       ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/favicon.PNG)
 
+* A Facebook business page 
+    * A business page has been created for marketing reasons, to further advertise the shop, post news and communicate with customers.  favicon has been added to make it easier for users to find the Taste of Poland page if multiple tabs are open.
+    * The page can be accessed [here](https://www.facebook.com/Bookworm-Paradise-106344228834492/?notif_id=1658868269617980&notif_t=page_invite_accept&ref=notif).  
+    
+      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb1.PNG)
+
+      ![Favicon](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/fb2.PNG)
+
 
 ## User Experience Design
 
@@ -346,6 +354,7 @@ User stories for this project can be viewed on [Trello](https://trello.com/b/S14
 * [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) were used to inspect elements of the website and test different styles. 
 * [GitHub](https://github.com/) has been used to store the code, images, and other contents of the website.
 * [AWS](https://aws.amazon.com/) was used to store static and media files in deployed stage. 
+* [Stripe](https://stripe.com/gb) was used to set up the payment system for the shop.
 * [Heroku](https://dashboard.heroku.com/apps) was used to deploy the game to the web.
 * [Git](https://git-scm.com/) was used to track changes made to the project and to commit and push code to the repository.
 * [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) was used to test the website's accessibility.
@@ -669,24 +678,23 @@ All tests in tests.py files were run successfuly.
 
 * CSS - no errors were found when code was passed through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
 
-    ![CSS](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/css-validator.PNG)
+    ![CSS](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/css-validator.PNG)
 
 
-* JavaScript - when running the code through [JSHint linter](https://jshint.com/) I received the following error message referring to the two 'let' variables: "'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).". I copied /*jshint esversion: 6 */ into the linter window to override this. I have also used /*globals bootstrap */ to stop JSHint from treating 'bootstrap' in let alert = new bootstrap.Alert(messages) as an undefined variable. After I did this, no more errors appeared.
+* JavaScript - when running the code through [JSHint linter](https://jshint.com/) I received the following error message referring to the two 'html' variables: "'template literal syntax' is only available in ES6 (use 'esversion: 6').". I copied /*jshint esversion: 6 */ into the linter window to override this. After I did this, no more errors appeared.
 
-    ![jShint](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/jshint.PNG)
+    ![jShint](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/jshint.PNG)
 
 
-* Python - when running the code through [PEP8 linter](http://pep8online.com/) I received a few 'line too long' errors referring to the automatically generated code in settings.py. As the code was auto-generated and there was not an easy fix to shorten the lines, I have left this error in. There were no errors in any other files that have been coded and customised by me.  
+* Python - when running the code through [PEP8 linter](http://pep8online.com/) I received a few 'line too long' errors referring to the automatically generated code in settings.py. As the code was auto-generated and there was not an easy fix to shorten the lines, I have left this error in. There were no errors in any files that have been coded and customised by me.  
 
 
 * Accessibility - when using the [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org) to test the site's accessibility, I have encountered the following errors and/or warnings:
-    * I skipped a heading level on the menu.html page (I used h1 and h3, leaving out h2). I fixed this by changing the h3 elements to h2. No further errors have been found after I applied this fix and passed the site through the validator again. 
-    * There was not enough contrast between the navbar background and the font of its elements. I have corrected this by changing the basic background color of 'red' to a slightly deeper #d40b0b. 
-    * Aria-labels in the Gallery page were missing. I have added them to all images. 
+    * There were missing labels on some form inputs as the inputs had placeholders instead. I have added the labels and used the .visually-hidden class to hide them (I found info [here](https://www.a11yproject.com/posts/how-to-hide-content/#:~:text=visually%2Dhidden%20class%20is%20applied,focus%20indicator%20had%20gone%20to.)) 
+    * Aria-labels were missing on some content - I have added all of them.
     * No further errors have been found after I applied the above fixes and passed the site through the validator again.
     
-    ![Wave](https://github.com/OlgaJ1989/taste-of-poland/blob/main/docs/wave.PNG)
+    ![Wave](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/wave.PNG)
 
 ### Unfixed bugs
 
@@ -698,25 +706,20 @@ The below steps were followed to deploy this project to Heroku:
 1. Go to [Heroku](https://dashboard.heroku.com/apps) and click 'New' to create a new app.
 2. After choosing the app name and setting the region, press 'Create app'.
 3. Go to 'Resources' to add a database and scroll down to 'Add-ons'. Search for 'Postgres' and choose 'Heroku Postgres' from available options.
-4. Go to 'Settings' and navigate to 'Config Vars'. As the Postgres database has been connected, the DATABASE_URL is already there. Add the remaining config vars: CLOUDINARY_URL, SECRET_KEY, (the values for these variables depend on your own personal set up and will not be added here for security reasons). 
+4. Go to 'Settings' and navigate to 'Config Vars'. As the Postgres database has been connected, the DATABASE_URL is already there. Add the remaining config vars: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, EMAIL_HOST_PASS, EMAIL_HOST_USER, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WH_SECRET, USE_AWS (the values for these variables depend on your own personal set up and will not be added here for security reasons). 
 5. Leave 'Settings' and go to 'Deploy'. Scroll down and set 'Deployment Method' to GitHub. Once GitHub is chosen, find your repository and connect it to Heroku.
 6. Scroll down to Manual Deploy, make sure the 'main' branch is selected and click 'Deploy Branch'.
-7. The deployed app can be found [here](https://taste-of-poland.herokuapp.com/).
+7. The deployed app can be found [here](https://bookworm-paradise.herokuapp.com/).
 
 ## Credits
 
 ### Content 
 
-All the general 'blurb' across the website has been written by me, apart from the names and descriptions of the dishes in the Menu. These have been taken and adapted from [StayPoland](https://www.staypoland.com/poland/polish-food/).
+The information about each book, including the cover photos and synopsis, has been taken from the [Waterstones](https://www.waterstones.com/) website. The full list of books (along with links) used can be found [here](/workspace/bookworm-paradise/docs/book-info-and-links.txt). I do not own any rights to this content and I used it only for educational purposes. 
 
 ### Media 
 
-All photos/images have been taken from [ShutterStock](https://www.shutterstock.com/.)
-
-### Code
-
-I have used this code snippet from [Bootdey](https://www.bootdey.com/snippets/view/bs4-Food-Menu) to create the Menu page.
-I have used a code snippet from [CSS Tricks](https://css-tricks.com/perfect-full-page-background-image/) to add the background Home page image.
+All photos/images have been taken from [Unsplash](https://unsplash.com/).
 
 ### Acknowledgements
 
