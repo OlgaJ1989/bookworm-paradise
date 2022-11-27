@@ -2,7 +2,7 @@
 
 Bookworm Paradise is an online, independent, family-run bookshop designed to allow customers to buy books, as well as read (everyone), edit and delete reviews (authorised users). 
 
-The website can be accessed [here](https://bookworm-paradise.herokuapp.com/).
+The website can be accessed [here](https://bookworm-paradise.onrender.com/).
 
 ![Mockup](https://github.com/OlgaJ1989/bookworm-paradise/blob/main/docs/mockup.PNG)
 
